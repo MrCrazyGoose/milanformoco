@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milan van Dam | Democratic Central Committee · District 15</title>
+  <meta name="description" content="Milan van Dam for Montgomery County Democratic Central Committee (District 15). Real action. Bold change. Organize everywhere." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:       #0d0d0d;
+      --ink2:      #2a2a2a;
+      --muted:     #5c5c5c;
+      --rule:      rgba(0,0,0,.12);
+      --bg:        #f5f2ec;
+      --cream:     #faf8f4;
+      --red:       #c0392b;
+      --red2:      #9b1c0e;
+      --gold:      #b8860b;
+      --gold-lt:   #f0c84a;
+      --white:     #ffffff;
+      --navy:      #0d1f3c;
+      --navy2:     #162a50;
+      --r:         4px;
+      --t:         .2s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--navy);
+      color: rgba(255,255,255,.9);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 9px 0;
+      overflow: hidden;
+      border-bottom: 2px solid var(--red);
+    }
+    .ticker-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      white-space: nowrap;
+      animation: tickerScroll 28s linear infinite;
+      width: max-content;
+    }
+    .ticker-inner:hover { animation-play-state: paused; }
+    .ticker-sep {
+      display: inline-block;
+      margin: 0 28px;
+      color: var(--gold-lt);
+      font-size: .9rem;
+    }
+    @keyframes tickerScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      box-shadow: 0 1px 0 var(--rule), 0 4px 20px rgba(0,0,0,.06);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 28px;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand img {
+      height: 50px;
+      width: auto;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--navy);
+      letter-spacing: -.01em;
+    }
+    .brand-sub {
+      font-size: .66rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink2);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color var(--t);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      height: 2px;
+      width: 0;
+      background: var(--red);
+      transition: width var(--t);
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--red); }
+
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: .76rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: 2px solid transparent;
+      border-radius: var(--r);
+      cursor: pointer;
+      transition: background var(--t), color var(--t), border-color var(--t), transform var(--t), box-shadow var(--t);
+      white-space: nowrap;
+    }
+    .btn-ghost {
+      background: transparent;
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--white);
+    }
+    .btn-primary {
+      background: var(--red);
+      color: var(--white);
+      border-color: var(--red);
+      box-shadow: 0 4px 16px rgba(192,57,43,.35);
+    }
+    .btn-primary:hover {
+      background: var(--red2);
+      border-color: var(--red2);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(192,57,43,.4);
+    }
+    .btn-outline-white {
+      background: transparent;
+      border-color: rgba(255,255,255,.6);
+      color: var(--white);
+    }
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+    }
+    .btn-white:hover {
+      background: var(--gold-lt);
+      border-color: var(--gold-lt);
+    }
+
+    /* ── BURGER ── */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .burger span {
+      width: 24px; height: 2px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: var(--t);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-pattern svg {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      opacity: .045;
+    }
+    .hero-accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--red) 0%, var(--gold-lt) 100%);
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 18px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--gold-lt);
+      flex-shrink: 0;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 5vw + 1rem, 5.2rem);
+      font-weight: 900;
+      line-height: .95;
+      letter-spacing: -.02em;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .hero-rule {
+      margin: 22px 0;
+      width: 56px; height: 3px;
+      background: var(--red);
+    }
+    .hero-office {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 16px;
+    }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.82);
+      max-width: 540px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+    .hero-desc strong { color: var(--white); font-weight: 700; }
+    .hero-cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-chips {
+      margin-top: 32px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,.22);
+      color: rgba(255,255,255,.75);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, .95fr);
+      gap: 34px;
+      align-items: center;
+      min-height: 580px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-left {
+      padding: 64px 48px 64px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      height: 420px;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: grayscale(15%) contrast(1.05);
+    }
+    .hero-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--navy) 0%, transparent 25%, transparent 70%, rgba(13,31,60,.6) 100%);
+    }
+    .hero-countdown {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 16px 20px;
+      background: rgba(13,31,60,.88);
+      border-top: 2px solid var(--red);
+      backdrop-filter: blur(6px);
+    }
+    .countdown-label {
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 4px;
+    }
+    .countdown-time {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold-lt);
+      letter-spacing: .06em;
+    }
+
+    /* ── DIVIDER ── */
+    .rule-section {
+      background: var(--red);
+      color: var(--white);
+      padding: 14px 0;
+    }
+    .rule-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .rule-item {
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .rule-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 0; }
+
+    .eyebrow {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--red);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw + .5rem, 2.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      color: var(--navy);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+    .section-lede {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .98rem;
+      max-width: 640px;
+      line-height: 1.75;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-body p {
+      color: var(--ink2);
+      font-size: .98rem;
+      line-height: 1.78;
+      margin-top: 16px;
+    }
+    .about-body p:first-of-type { margin-top: 0; }
+    .pullquote {
+      margin: 32px 0;
+      padding: 24px 28px;
+      border-left: 4px solid var(--red);
+      background: var(--white);
+      box-shadow: 0 2px 14px rgba(0,0,0,.07);
+    }
+    .pullquote p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.55;
+      font-weight: 700;
+      margin-top: 0 !important;
+    }
+    .pullquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-style: normal;
+    }
+
+    .about-sidebar { display: flex; flex-direction: column; gap: 16px; }
+    .info-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 3px solid var(--navy);
+      padding: 22px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05);
+    }
+    .info-card .k {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .info-card h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--bg);
+      margin-top: 8px;
+      font-size: .86rem;
+      font-weight: 500;
+      color: var(--navy);
+      border: 1px solid var(--rule);
+      transition: background var(--t), border-color var(--t);
+      cursor: pointer;
+    }
+    .link-row:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .link-row .arrow {
+      margin-left: auto;
+      font-size: .8rem;
+      opacity: .5;
+    }
+
+    /* ── PLAN ── */
+    #plan { background: var(--bg); }
+    .plan-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .plan-nav {
+      position: sticky;
+      top: 90px;
+    }
+    .plan-nav-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .plan-nav-item {
+      display: block;
+      padding: 11px 14px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      border-left: 3px solid transparent;
+      transition: all var(--t);
+      cursor: pointer;
+      background: transparent;
+      border-bottom: none;
+      border-top: none;
+      border-right: none;
+      text-align: left;
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .plan-nav-item:hover { color: var(--navy); background: rgba(0,0,0,.04); }
+    .plan-nav-item.active {
+      color: var(--navy);
+      border-left-color: var(--red);
+      background: var(--white);
+      font-weight: 700;
+    }
+    .plan-panels { display: flex; flex-direction: column; gap: 3px; }
+    .plan-panel {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 4px solid var(--navy);
+      overflow: hidden;
+      transition: border-color var(--t);
+    }
+    .plan-panel.open { border-left-color: var(--red); }
+    .plan-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 22px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .plan-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--r);
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--white);
+      transition: background var(--t);
+    }
+    .plan-panel.open .plan-icon { background: var(--red); }
+    .plan-title-block { flex: 1; }
+    .plan-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .plan-sub {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+    .plan-chev {
+      width: 10px; height: 10px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      transition: transform var(--t);
+      flex-shrink: 0;
+      margin-right: 4px;
+    }
+    .plan-panel.open .plan-chev { transform: rotate(225deg); }
+    .plan-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0 22px 0 78px;
+    }
+    .plan-panel.open .plan-body {
+      max-height: 600px;
+      padding: 4px 22px 22px 78px;
+    }
+    .plan-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .plan-body li {
+      font-size: .92rem;
+      color: var(--ink2);
+      line-height: 1.7;
+      padding-left: 18px;
+      position: relative;
+    }
+    .plan-body li::before {
+      content: '—';
+      color: var(--red);
+      font-weight: 700;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    /* ── VOTE BANNER ── */
+    .vote-banner {
+      background: var(--navy);
+      color: var(--white);
+      padding: 56px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .vote-banner::before {
+      content: '';
+      position: absolute;
+      right: -60px; top: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      border: 60px solid rgba(255,255,255,.04);
+      pointer-events: none;
+    }
+    .vote-banner::after {
+      content: '';
+      position: absolute;
+      left: -40px; bottom: -100px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 40px solid rgba(255,255,255,.03);
+      pointer-events: none;
+    }
+    .vote-inner {
+      position: relative; z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .vote-left .tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+      margin-bottom: 10px;
+    }
+    .vote-left h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 3vw + .4rem, 2.6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -.01em;
+    }
+    .vote-left h2 em { font-style: italic; color: var(--gold-lt); }
+    .vote-dates {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .vote-date-item {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 14px 18px;
+    }
+    .vote-date-item .d-label {
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 4px;
+    }
+    .vote-date-item .d-val {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .vote-right {
+      text-align: right;
+    }
+    .vote-right p {
+      font-size: .92rem;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 18px;
+      max-width: 320px;
+    }
+
+    /* ── CONTACT ── */
+    #get-involved { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+      align-items: start;
+    }
+    .contact-info { display: flex; flex-direction: column; gap: 14px; }
+    .contact-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 20px 22px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+    .contact-card .c-label {
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .c-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 14px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--navy);
+      border: 1px solid var(--rule);
+      margin-top: 8px;
+      transition: background var(--t), border-color var(--t), color var(--t);
+    }
+    .c-link:first-of-type { margin-top: 0; }
+    .c-link:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .c-link b { font-weight: 700; }
+    .c-link .c-arrow { margin-left: auto; opacity: .4; font-size: .8rem; }
+    .promise {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 22px;
+      margin-top: 4px;
+    }
+    .promise p {
+      font-size: .86rem;
+      line-height: 1.65;
+      color: rgba(255,255,255,.82);
+    }
+    .promise strong { color: var(--gold-lt); }
+
+    .form-panel {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      padding: 28px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+    }
+    .form-panel .f-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .form-panel .f-sub {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .form-panel iframe {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.55);
+    }
+    .footer-top {
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding: 36px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--white);
+    }
+    .footer-brand span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-top: 4px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .footer-badge {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.6);
+    }
+    .footer-bottom {
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: .74rem;
+    }
+
+    /* ── MOBILE MENU (hidden globally, shown only when .open is toggled) ── */
+    .mobile-menu { display: none; }
+
+    /* ── FLOATING CTA ── */
+    .fab {
+      position: fixed;
+      right: 20px; bottom: 20px;
+      z-index: 800;
+      background: var(--navy);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+    }
+    .fab-text .f-date {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-lt);
+    }
+    .fab-text .f-action {
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .fab-close {
+      width: 26px; height: 26px;
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.6);
+      cursor: pointer;
+      font-size: .9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--t);
+    }
+    .fab-close:hover { background: rgba(255,255,255,.15); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-left { padding: 48px 0 32px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .hero-right { height: 340px; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .plan-grid { grid-template-columns: 1fr; }
+      .plan-nav { position: static; display: flex; gap: 6px; flex-wrap: wrap; }
+      .plan-nav-label { display: none; }
+      .plan-nav-item { border-left: none; border-bottom: 3px solid transparent; padding: 8px 12px; }
+      .plan-nav-item.active { border-left: none; border-bottom-color: var(--red); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .vote-inner { flex-direction: column; }
+      .vote-right { text-align: left; }
+    }
+    @media (max-width: 700px) {
+      .nav-links, .nav-actions { display: none; }
+      .burger { display: flex; }
+      .mobile-menu {
+        display: none !important;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--cream);
+        border-top: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        padding: 16px 28px 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,.1);
+        flex-direction: column;
+        gap: 14px;
+        z-index: 10;
+      }
+      .mobile-menu.open { display: flex !important; }
+      .mobile-menu a {
+        font-size: .82rem;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        color: var(--ink2);
+        padding: 8px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .mobile-menu .btn { width: 100%; text-align: center; }
+      header { position: sticky; }
+    }
+    @media (max-width: 500px) {
+      .container { padding: 0 18px; }
+      section { padding: 56px 0; }
+      .hero-left { padding: 40px 0 28px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker" role="marquee" aria-label="Campaign updates">
+    <div class="ticker-inner" id="tickerInner">
+      Vote June 23, 2026 <span class="ticker-sep">★</span>
+      Early Voting: June 11–18 <span class="ticker-sep">★</span>
+      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
+      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
+      Real Action. Bold Change. <span class="ticker-sep">★</span>
+      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
+      District 15 · Montgomery County <span class="ticker-sep">★</span>
+      Vote June 23, 2026 <span class="ticker-sep">★</span>
+      Early Voting: June 11–18 <span class="ticker-sep">★</span>
+      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
+      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
+      Real Action. Bold Change. <span class="ticker-sep">★</span>
+      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
+      District 15 · Montgomery County <span class="ticker-sep">★</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- <img src="campaign-logo.png" alt="Milan van Dam for Democratic Central Committee" onerror="this.style.display='none'"> -->
+        <div class="brand-text">
+          <div class="brand-name">Milan van Dam</div>
+          <div class="brand-sub">MCDCC · District 15</div>
+        </div>
+      </div>
+
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="#home" data-section="home">Home</a></li>
+        <li><a href="#about" data-section="about">About</a></li>
+        <li><a href="#plan" data-section="plan">Platform</a></li>
+        <li><a href="#get-involved" data-section="get-involved">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="#plan">Platform</a>
+        <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+      </div>
+
+      <div class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#plan">Platform</a>
+      <a href="#get-involved">Contact</a>
+      <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8" style="margin-top:6px; justify-content:center;">Join the Campaign</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-accent-bar"></div>
+
+    <div class="hero-bg-pattern">
+      <svg viewBox="0 0 1200 580" preserveAspectRatio="xMidYMid slice" fill="none">
+        <line x1="0" y1="100" x2="1200" y2="100" stroke="white" stroke-width="1"/>
+        <line x1="0" y1="200" x2="1200" y2="200" stroke="white" stroke-width="1"/>
+        <line x1="0" y1="300" x2="1200" y2="300" stroke="white" stroke-width="1"/>
+        <line x1="0" y1="400" x2="1200" y2="400" stroke="white" stroke-width="1"/>
+        <line x1="0" y1="500" x2="1200" y2="500" stroke="white" stroke-width="1"/>
+        <line x1="100" y1="0" x2="100" y2="580" stroke="white" stroke-width="1"/>
+        <line x1="300" y1="0" x2="300" y2="580" stroke="white" stroke-width="1"/>
+        <line x1="500" y1="0" x2="500" y2="580" stroke="white" stroke-width="1"/>
+        <line x1="700" y1="0" x2="700" y2="580" stroke="white" stroke-width="1"/>
+        <line x1="900" y1="0" x2="900" y2="580" stroke="white" stroke-width="1"/>
+        <line x1="1100" y1="0" x2="1100" y2="580" stroke="white" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Montgomery County · District 15</div>
+          <h1>Milan<br><em>van Dam</em></h1>
+          <div class="hero-rule"></div>
+          <div class="hero-office">Democratic Central Committee · 2026</div>
+          <p class="hero-desc">
+            Child of immigrants. Community activist. Democratic organizer.
+            Fighting for a party that <strong>organizes year-round</strong>,
+            <strong>stands up to Trump &amp; MAGA</strong>, and
+            <strong>works for working people</strong> — not special interests.
+          </p>
+          <div class="hero-chips">
+            <div class="chip">Organizer</div>
+            <div class="chip">Community-first</div>
+            <div class="chip">Real vision</div>
+          </div>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+            <a class="btn btn-outline-white" href="#plan">Read the Platform</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <img class="hero-photo" src="headshot.png" alt="Milan van Dam" onerror="this.parentElement.style.background='linear-gradient(180deg,#1a2e50,#0d1f3c)'">
+          <div class="hero-photo-overlay"></div>
+          <div class="hero-countdown">
+            <div class="countdown-label">Election Day · June 23, 2026 · Countdown</div>
+            <div class="countdown-time" id="countTime">Loading…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RED RULE -->
+  <div class="rule-section">
+    <div class="container rule-inner">
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        Vote June 23, 2026
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        Early Voting: June 11–18
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        Real Action. Bold Change.
+      </div>
+      <div class="rule-item">
+        <div class="rule-dot"></div>
+        Organize Everywhere
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="eyebrow">About Milan</div>
+      <div class="about-grid">
+        <div class="about-body">
+          <div class="section-title">An organizer,<br><em>not a politician</em></div>
+          <p>
+            I'm running for Democratic Central Committee in District 15 to build strong, year-round grassroots organizing infrastructure — and to stand up for our immigrant and marginalized communities against the Trump Administration.
+          </p>
+          <p>
+            As a child of immigrants, I know what it means to fight on the ground, not from a podium. I've helped run one of the largest nationwide grassroots Democratic organizations, organized campaigns and initiatives across Montgomery County and the state, and advocated for increased accessibility and accountability within the state party and the DNC.
+          </p>
+          <div class="pullquote">
+            <p>"We all know these are not ordinary times. We need change, and a new generation of leadership to move the party forward and fight for our county."</p>
+            <cite>— Milan van Dam</cite>
+          </div>
+          <p>
+            You deserve a party that works for you, and leaders that work as hard as you do.
+          </p>
+        </div>
+
+        <div class="about-sidebar">
+          <div class="info-card">
+            <div class="k">Am I in District 15?</div>
+            <h4>Find your legislative district</h4>
+            <a class="link-row" href="https://mgaleg.maryland.gov/mgawebsite/Members/District#divQuery" target="_blank" rel="noreferrer">
+              Check your district on the MGA website
+              <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <div class="info-card">
+            <div class="k">Voter Resources</div>
+            <h4>Ready to vote in June?</h4>
+            <a class="link-row" href="https://www.montgomerycountymd.gov/elections/index2.html" target="_blank" rel="noreferrer">
+              Montgomery County Elections Office
+              <span class="arrow">↗</span>
+            </a>
+            <div style="margin-top:14px; font-size:.84rem; color:var(--muted); line-height:1.6;">
+              <strong style="color:var(--ink2);">Election Day:</strong> June 23, 2026<br>
+              <strong style="color:var(--ink2);">Early Voting:</strong> June 11–18, 2026
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="k">The Stakes</div>
+            <h4>Real action. Bold change.</h4>
+            <p style="font-size:.86rem; color:var(--muted); margin-top:8px; line-height:1.65;">
+              In District 15 — from Poolesville to North Potomac — our communities need a party that shows up every day, not just at election time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="plan">
+    <div class="container">
+      <div class="eyebrow">The Platform</div>
+      <div class="section-title">Fighting for a party that…</div>
+      <p class="section-lede">Four commitments. Real action. Built for this moment.</p>
+
+      <div class="plan-grid">
+        <div class="plan-nav">
+          <div class="plan-nav-label">Jump to pillar</div>
+          <button class="plan-nav-item active" data-target="p0">Organize everywhere</button>
+          <button class="plan-nav-item" data-target="p1">Stand up to MAGA</button>
+          <button class="plan-nav-item" data-target="p2">Work for the people</button>
+          <button class="plan-nav-item" data-target="p3">Defend our communities</button>
+        </div>
+
+        <div class="plan-panels">
+          <!-- Panel 1 -->
+          <div class="plan-panel open" id="p0">
+            <div class="plan-header">
+              <div class="plan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V7L7 11H5a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 8.5c3.5 0 6-2 7-3v13c-1-1-3.5-3-7-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="plan-title-block">
+                <div class="plan-title">Organizes Everywhere, Year-Round</div>
+                <div class="plan-sub">We cannot leave any community behind, any time unused.</div>
+              </div>
+              <div class="plan-chev"></div>
+            </div>
+            <div class="plan-body">
+              <ul>
+                <li>Invest in <strong>year-round field work</strong> in District 15 and countywide, working with precinct leaders and clubs.</li>
+                <li>Prioritize <strong>precinct-level and club-based organizing</strong> and building strong volunteer pipelines.</li>
+                <li>Establish campaign <strong>training programs</strong>, organize midterm phonebanks and canvasses.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div class="plan-panel" id="p1">
+            <div class="plan-header">
+              <div class="plan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="plan-title-block">
+                <div class="plan-title">Stands Up to Trump &amp; MAGA</div>
+                <div class="plan-sub">Our communities are under attack. We have to fight back.</div>
+              </div>
+              <div class="plan-chev"></div>
+            </div>
+            <div class="plan-body">
+              <ul>
+                <li>Build digital rapid response capacity and rebuild the central committee's social media presence.</li>
+                <li>Unite organizations, communities, and campaigns against Trump's actions.</li>
+                <li>Make the local party a force for action — from <strong>protests to phonebanks</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div class="plan-panel" id="p2">
+            <div class="plan-header">
+              <div class="plan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="plan-title-block">
+                <div class="plan-title">Builds a Party for the People</div>
+                <div class="plan-sub">More representative, focused on delivering real results.</div>
+              </div>
+              <div class="plan-chev"></div>
+            </div>
+            <div class="plan-body">
+              <ul>
+                <li>Move towards <strong>special elections</strong> from the appointment system.</li>
+                <li>Host regular town halls, record meetings, and open a feedback form for the party.</li>
+                <li>Show up to local events and maintain regular communication with community leaders.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Panel 4 -->
+          <div class="plan-panel" id="p3">
+            <div class="plan-header">
+              <div class="plan-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="plan-title-block">
+                <div class="plan-title">Defends Communities &amp; Rejects Hate</div>
+                <div class="plan-sub">A party that reflects our diversity and protects the vulnerable.</div>
+              </div>
+              <div class="plan-chev"></div>
+            </div>
+            <div class="plan-body">
+              <ul>
+                <li>Stand up for immigrant communities with consistent advocacy and presence.</li>
+                <li>Reject <strong>antisemitism and hate</strong> clearly and consistently.</li>
+                <li>Work closely with clubs to ensure all voices are heard — including high school, college, and young Democrats.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOTE BANNER -->
+  <div class="vote-banner">
+    <div class="container">
+      <div class="vote-inner">
+        <div class="vote-left">
+          <div class="tag">Mark your calendar</div>
+          <h2>Make your<br><em>voice heard</em></h2>
+          <div class="vote-dates">
+            <div class="vote-date-item">
+              <div class="d-label">Early Voting</div>
+              <div class="d-val">June 11–18</div>
+            </div>
+            <div class="vote-date-item">
+              <div class="d-label">Election Day</div>
+              <div class="d-val">June 23, 2026</div>
+            </div>
+            <div class="vote-date-item">
+              <div class="d-label">District</div>
+              <div class="d-val">Legislative D15</div>
+            </div>
+          </div>
+        </div>
+        <div class="vote-right">
+          <p>Not sure if you're registered or in District 15? Check your status before June arrives.</p>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
+            <a class="btn btn-white" href="https://mgaleg.maryland.gov/mgawebsite/Members/District#divQuery" target="_blank" rel="noreferrer">Check My District</a>
+            <a class="btn btn-outline-white" href="https://www.montgomerycountymd.gov/elections/index2.html" target="_blank" rel="noreferrer">Voter Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="get-involved">
+    <div class="container">
+      <div class="eyebrow">Get Involved</div>
+      <div class="section-title">Get in contact,<br><em>get involved</em></div>
+      <p class="section-lede">Want to help out, have a question, or just want to talk? We'll follow up within 24 hours — guaranteed.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="c-label">Reach us directly</div>
+            <a class="c-link" href="tel:240-660-1088"><b>Phone</b> — 240-660-1088 <span class="c-arrow">→</span></a>
+            <a class="c-link" href="mailto:milanformoco@gmail.com"><b>Email</b> — milanformoco@gmail.com <span class="c-arrow">→</span></a>
+            <a class="c-link" href="https://milanformoco.com" target="_blank" rel="noreferrer"><b>Website</b> — milanformoco.com <span class="c-arrow">↗</span></a>
+            <a class="c-link" href="https://instagram.com/milanformoco" target="_blank" rel="noreferrer"><b>Instagram / Facebook</b> — @milanformoco <span class="c-arrow">↗</span></a>
+          </div>
+
+          <div class="promise">
+            <p>We <strong>guarantee responses within 24 hours</strong>. We're also happy to set up a 1-on-1 call or an in-person meeting to discuss your priorities. We are working to earn your vote.</p>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="f-title">Join the campaign!</div>
+          <div class="f-sub">Use the form below and we'll be in touch shortly.</div>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeQqZczHzEC6ta-oj567uoYGu5xI20CEa_SFRwP52TCMuyPzA/viewform?embedded=true"
+            height="320"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Contact Form">
+            Loading…
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            Milan van Dam
+            <span>Democratic Central Committee · District 15 · 2026</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-badge">Vote June 23</div>
+          <div class="footer-badge">Early Voting Jun 11–18</div>
+          <div class="footer-badge">@milanformoco</div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>By Authority: Friends of Milan Van Dam; Ramachandra Mukunda, Treasurer.</div>
+        <div>Real Action. Bold Change. District 15.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="fab" id="fab">
+    <div class="fab-text">
+      <div class="f-date">June 23 · District 15</div>
+      <div class="f-action">Join the Campaign</div>
+    </div>
+    <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8" style="padding:9px 14px; font-size:.7rem;">Sign Up</a>
+    <button class="fab-close" id="fabClose" aria-label="Dismiss">×</button>
+  </div>
+
+  <script>
+    // ── COUNTDOWN
+    const countTimeEl = document.getElementById('countTime');
+    const electionDate = new Date("2026-06-23T06:00:00-04:00");
+    function tick() {
+      const diff = electionDate - new Date();
+      if (diff <= 0) { countTimeEl.textContent = "Election Day is here!"; return; }
+      const s = Math.floor(diff / 1000);
+      const d = Math.floor(s / 86400);
+      const h = Math.floor((s % 86400) / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const ss = s % 60;
+      countTimeEl.textContent =
+        String(d).padStart(2,'0') + 'd  ' +
+        String(h).padStart(2,'0') + 'h  ' +
+        String(m).padStart(2,'0') + 'm  ' +
+        String(ss).padStart(2,'0') + 's';
+    }
+    tick(); setInterval(tick, 1000);
+
+    // ── MOBILE NAV
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger?.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── SCROLLSPY
+    const sectionIds = ['home','about','plan','get-involved'];
+    const navMap = new Map();
+    document.querySelectorAll('.nav-links a[data-section]').forEach(a => navMap.set(a.dataset.section, a));
+    const spy = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navMap.forEach(l => l.classList.remove('active'));
+          const a = navMap.get(e.target.id);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+    sectionIds.map(id => document.getElementById(id)).filter(Boolean).forEach(el => spy.observe(el));
+
+    // ── PLAN ACCORDION + NAV
+    const panels = document.querySelectorAll('.plan-panel');
+    const navItems = document.querySelectorAll('.plan-nav-item');
+
+    function openPanel(id) {
+      panels.forEach(p => p.classList.remove('open'));
+      navItems.forEach(n => n.classList.remove('active'));
+      const panel = document.getElementById(id);
+      if (panel) panel.classList.add('open');
+      const navItem = document.querySelector(`.plan-nav-item[data-target="${id}"]`);
+      if (navItem) navItem.classList.add('active');
+    }
+
+    panels.forEach(panel => {
+      panel.querySelector('.plan-header')?.addEventListener('click', () => {
+        const isOpen = panel.classList.contains('open');
+        panels.forEach(p => p.classList.remove('open'));
+        navItems.forEach(n => n.classList.remove('active'));
+        if (!isOpen) {
+          panel.classList.add('open');
+          const navItem = document.querySelector(`.plan-nav-item[data-target="${panel.id}"]`);
+          if (navItem) navItem.classList.add('active');
+        }
+      });
+    });
+
+    navItems.forEach(btn => {
+      btn.addEventListener('click', () => openPanel(btn.dataset.target));
+    });
+
+    // ── FLOATING CTA
+    document.getElementById('fabClose')?.addEventListener('click', () => {
+      document.getElementById('fab').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
