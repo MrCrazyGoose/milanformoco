@@ -225,28 +225,31 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--navy);
+      background: linear-gradient(rgba(13,31,60,.62), rgba(13,31,60,.62)), url('index1.png') right center/cover no-repeat;
+      /* background: url('index1.png') right center/cover no-repeat; */
       color: var(--white);
       position: relative;
-      overflow: hidden;
-    }
-    .hero-bg-pattern {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .hero-bg-pattern svg {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      opacity: .045;
     }
     .hero-accent-bar {
       height: 5px;
       background: linear-gradient(90deg, var(--red) 0%, var(--gold-lt) 100%);
     }
-
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      min-height: 560px;
+      position: relative;
+      z-index: 2;
+      align-items: center;
+    }
+    .hero-left {
+      padding: 72px 0;
+      max-width: 640px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-right { display: none; }
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
@@ -293,7 +296,7 @@
     }
     .hero-desc {
       font-size: 1.05rem;
-      color: rgba(255,255,255,.82);
+      color: rgba(255,255,255,.88);
       max-width: 540px;
       line-height: 1.7;
       font-weight: 400;
@@ -322,53 +325,12 @@
       border: 1px solid rgba(255,255,255,.22);
       color: rgba(255,255,255,.75);
     }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, .95fr);
-      gap: 34px;
-      align-items: center;
-      min-height: 580px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-left {
-      padding: 64px 48px 64px 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-right: 1px solid rgba(255,255,255,.1);
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      height: 420px;
-    }
-
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 15%;
-      display: block;
-      filter: grayscale(15%) contrast(1.05);
-    }
-    .hero-photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--navy) 0%, transparent 25%, transparent 70%, rgba(13,31,60,.6) 100%);
-    }
     .hero-countdown {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      padding: 16px 20px;
       background: rgba(13,31,60,.88);
       border-top: 2px solid var(--red);
-      backdrop-filter: blur(6px);
+      padding: 16px 28px;
+      position: relative;
+      z-index: 2;
     }
     .countdown-label {
       font-size: .64rem;
@@ -933,9 +895,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-left { padding: 48px 0 32px; border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
-      .hero-right { height: 340px; }
+      .hero-left { padding: 56px 0 40px; }
       .about-grid { grid-template-columns: 1fr; gap: 36px; }
       .plan-grid { grid-template-columns: 1fr; }
       .plan-nav { position: static; display: flex; gap: 6px; flex-wrap: wrap; }
@@ -981,6 +941,7 @@
       .hero-left { padding: 40px 0 28px; }
     }
   </style>
+
 </head>
 
 <body>
@@ -1024,8 +985,8 @@
       </ul>
 
       <div class="nav-actions">
-        <a class="btn btn-ghost" href="#plan">Platform</a>
-        <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+        <a class="btn btn-ghost" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+        <a class="btn btn-primary" href="https://secure.actblue.com/donate/milanformoco">Donate</a>
       </div>
 
       <div class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
@@ -1045,23 +1006,7 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-accent-bar"></div>
-
-    <div class="hero-bg-pattern">
-      <svg viewBox="0 0 1200 580" preserveAspectRatio="xMidYMid slice" fill="none">
-        <line x1="0" y1="100" x2="1200" y2="100" stroke="white" stroke-width="1"/>
-        <line x1="0" y1="200" x2="1200" y2="200" stroke="white" stroke-width="1"/>
-        <line x1="0" y1="300" x2="1200" y2="300" stroke="white" stroke-width="1"/>
-        <line x1="0" y1="400" x2="1200" y2="400" stroke="white" stroke-width="1"/>
-        <line x1="0" y1="500" x2="1200" y2="500" stroke="white" stroke-width="1"/>
-        <line x1="100" y1="0" x2="100" y2="580" stroke="white" stroke-width="1"/>
-        <line x1="300" y1="0" x2="300" y2="580" stroke="white" stroke-width="1"/>
-        <line x1="500" y1="0" x2="500" y2="580" stroke="white" stroke-width="1"/>
-        <line x1="700" y1="0" x2="700" y2="580" stroke="white" stroke-width="1"/>
-        <line x1="900" y1="0" x2="900" y2="580" stroke="white" stroke-width="1"/>
-        <line x1="1100" y1="0" x2="1100" y2="580" stroke="white" stroke-width="1"/>
-      </svg>
-    </div>
+    <!-- <div class="hero-accent-bar"></div> -->
 
     <div class="container">
       <div class="hero-inner">
@@ -1086,17 +1031,15 @@
             <a class="btn btn-outline-white" href="#plan">Read the Platform</a>
           </div>
         </div>
-
-        <div class="hero-right">
-          <img class="hero-photo" src="headshot.png" alt="Milan van Dam" onerror="this.parentElement.style.background='linear-gradient(180deg,#1a2e50,#0d1f3c)'">
-          <div class="hero-photo-overlay"></div>
-          <div class="hero-countdown">
-            <div class="countdown-label">Election Day · June 23, 2026 · Countdown</div>
-            <div class="countdown-time" id="countTime">Loading…</div>
-          </div>
-        </div>
       </div>
     </div>
+
+    <!-- <div class="hero-countdown">
+      <div class="container">
+        <div class="countdown-label">Election Day · June 23, 2026 · Countdown</div>
+        <div class="countdown-time" id="countTime">Loading…</div>
+      </div>
+    </div> -->
   </section>
 
   <!-- RED RULE -->
