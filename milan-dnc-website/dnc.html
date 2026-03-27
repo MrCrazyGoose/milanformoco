@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Milan van Dam | DNC Youth Council At-Large – Eastern Region</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Campaign website for Milan van Dam, youth Democratic organizer running for DNC Youth Council At-Large representing the Eastern Region." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+  <style>
+    :root {
+      --blue-deep: #003f87;
+      --blue-main: #0058c9;
+      --blue-soft: #e6f2ff;
+      --accent: #ffcc4d;
+      --text-dark: #0f2037;
+      --text-muted: #5f6b7a;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 40px rgba(0, 30, 96, 0.35);
+      --radius-pill: 999px;
+      --radius-card: 18px;
+      --transition: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--blue-soft);
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Top strip */
+    .top-strip {
+      background: #011b3a;
+      color: var(--white);
+      font-size: 0.78rem;
+      padding: 7px 0;
+    }
+
+    .top-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .top-strip-cta {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .top-strip-link {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    /* Header / Nav */
+    header {
+      background: var(--blue-deep);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      position: relative;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand-logo {
+      height: 44px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-pill);
+      padding: 9px 18px;
+      border: 2px solid transparent;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #112135;
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--blue-deep);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      width: 20px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--white);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* Hero */
+    #hero {
+      background: radial-gradient(circle at top left, #1a82ff 0%, #0046a3 45%, #00214d 100%);
+      color: var(--white);
+      padding: 56px 0 66px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before,
+    #hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      border: 4px solid rgba(255, 255, 255, 0.18);
+    }
+
+    #hero::before {
+      width: 360px;
+      height: 360px;
+      left: -160px;
+      top: -140px;
+    }
+
+    #hero::after {
+      width: 440px;
+      height: 440px;
+      right: -200px;
+      bottom: -200px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      /* margin-bottom: 6px; */
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 3.2vw + 1.3rem, 3.6rem);
+      line-height: 1.02;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .hero-sub {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      margin-top: 6px;
+      opacity: 0.92;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      margin-top: 14px;
+      max-width: 520px;
+      font-size: 0.96rem;
+      opacity: 0.96;
+    }
+
+    .hero-cta-row {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-vote-pill {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: var(--radius-pill);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-vote-pill span:first-child {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #3bfd88;
+      box-shadow: 0 0 0 4px rgba(59, 253, 136, 0.35);
+    }
+
+    .hero-highlights {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-chip {
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      padding: 6px 14px;
+      opacity: 0.96;
+      font-weight: 700;
+    }
+
+    .hero-photo-wrap {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      margin-bottom: 10px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .hero-photo-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      opacity: 0.9;
+      font-weight: 700;
+    }
+
+    .hero-photo-copy {
+      font-size: 0.82rem;
+      opacity: 0.9;
+      margin-top: 2px;
+    }
+
+        /* Hero form card */
+    .hero-card {
+      background: rgba(2, 40, 90, 0.95);
+      border-radius: 18px;
+      padding: 22px 22px 24px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0, 1fr));
+     gap: 8px;
+    }
+
+    .hero-gallery-grid img {
+    border-radius: 10px;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-sub {
+      font-size: 0.86rem;
+      opacity: 0.8;
+      margin-bottom: 18px;
+    }
+
+    /* Countdown */
+    .hero-countdown {
+      margin-top: 16px;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.26);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      font-size: 0.8rem;
+    }
+
+    .hero-count-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      opacity: 0.9;
+    }
+
+    .hero-count-time {
+      font-weight: 900;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    .section-header {
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      color: var(--blue-main);
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      margin-top: 4px;
+    }
+
+    .section-lede {
+      margin-top: 8px;
+      max-width: 720px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* About / Why I'm Running */
+    #about {
+      background: var(--white);
+    }
+
+    .body-copy p + p {
+      margin-top: 12px;
+    }
+
+    .quote-block {
+      margin-top: 18px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+      padding: 14px 16px;
+      border-left: 4px solid var(--blue-main);
+      font-size: 0.9rem;
+    }
+
+    /* Story / “Rooms” section */
+    #story {
+      background: var(--blue-soft);
+    }
+
+    .split-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .badge-list {
+      list-style: none;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .badge-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .badge-dot {
+      font-size: 0.85rem;
+      color: var(--blue-main);
+      margin-top: 2px;
+    }
+
+    .story-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 16px 18px 18px;
+      box-shadow: 0 16px 32px rgba(2, 36, 90, 0.18);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    /* Experience */
+    #experience {
+      background: var(--white);
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .exp-card {
+      background: var(--blue-soft);
+      border-radius: var(--radius-card);
+      padding: 16px 16px 18px;
+      box-shadow: 0 14px 30px rgba(0, 46, 114, 0.14);
+      border-top: 4px solid var(--blue-main);
+      font-size: 0.9rem;
+    }
+
+    .exp-role {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 800;
+      color: var(--blue-main);
+      margin-bottom: 4px;
+    }
+
+    .exp-title {
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    .exp-body {
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    /* Plan / Platform */
+    #platform {
+      background: var(--blue-soft);
+    }
+
+    .issues-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .issue-card {
+      background: var(--white);
+      border-radius: var(--radius-card);
+      padding: 16px 16px 18px;
+      box-shadow: 0 14px 30px rgba(0, 46, 114, 0.14);
+      border-top: 4px solid var(--blue-main);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .issue-tag {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--blue-main);
+      font-weight: 800;
+    }
+
+    .issue-title {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .issue-body {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .issue-list {
+      margin-top: 6px;
+      padding-left: 16px;
+      font-size: 0.85rem;
+    }
+
+    .issue-list li + li {
+      margin-top: 2px;
+    }
+
+    /* Stakes / MAGA */
+    #stakes {
+      background: var(--white);
+    }
+
+    .stakes-block {
+      margin-top: 10px;
+      background: var(--blue-soft);
+      border-radius: 16px;
+      padding: 16px 18px 18px;
+      border-left: 4px solid var(--blue-main);
+      font-size: 0.94rem;
+    }
+
+    /* Get Involved */
+    #get-involved {
+      background: var(--blue-deep);
+      color: var(--white);
+    }
+
+    #get-involved .section-kicker {
+      color: var(--accent);
+    }
+
+    #get-involved .section-lede {
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .involved-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 26px;
+      margin-top: 12px;
+      align-items: flex-start;
+    }
+
+    .involved-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+
+    .involved-col h4 {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+
+    .involved-list {
+      list-style: none;
+      font-size: 0.9rem;
+    }
+
+    .involved-list li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .involved-icon {
+      font-size: 1rem;
+      line-height: 1.1;
+      margin-top: 1px;
+    }
+
+    .contact-form {
+      margin-top: 4px;
+      background: rgba(2, 21, 55, 0.96);
+      padding: 16px 18px 18px;
+      border-radius: 18px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-form-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      margin-bottom: 8px;
+      opacity: 0.95;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 4px;
+      opacity: 0.9;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 9px 11px;
+      background: rgba(0, 7, 30, 0.96);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(255, 204, 77, 0.6);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-note {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    footer {
+      background: #020b1a;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.76rem;
+      padding: 12px 0 16px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.8rem;
+    }
+
+    .social-pill img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+    .footer-bottom {
+      opacity: 0.75;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .split-grid,
+      .involved-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .exp-grid,
+      .issues-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .involved-columns {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav-right {
+        position: absolute;
+        inset: 56px 0 auto;
+        background: var(--blue-deep);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px 14px;
+        gap: 12px;
+        display: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      .nav-right.open {
+        display: flex;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+      .nav-actions {
+        width: 100%;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 52px 0;
+      }
+      .contact-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .exp-grid,
+      .issues-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-photo {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top strip -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <span class="top-strip-cta">Election: December 13 • DNC Youth Council At-Large • Eastern Region • Los Angeles Meeting</span>
+      <a href="https://instagram.com/milan.van.dam">Check out my Instagram!</a>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png"
+             alt="Milan van Dam for DNC Youth Council At-Large – Eastern Region"
+             class="brand-logo">
+      </div>
+
+      <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="nav-right" id="navRight">
+        <nav class="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#story">Story</a>
+          <a href="#experience">Experience</a>
+          <a href="#platform">Platform</a>
+          <a href="#get-involved">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="hero-kicker">Representation. Unity. Accessibility.</div>
+        <h1 class="hero-title">Milan van Dam</h1>
+        <!-- <div class="hero-sub">For DNC Youth Council At-Large • Eastern Region</div> -->
+
+        <div class="hero-tagline">
+          For DNC Youth Council At-Large • Eastern Region
+        </div>
+
+        <p class="hero-copy">
+          I’m a youth Democratic organizer running for an At-Large seat on the DNC Youth Council for the Eastern Region.
+          I'm running because we need leaders who will build youth power across the nation and the Eastern Region, fighting for a party that organizes in every community, represents youth voices, supports our youth organizations, and is accessible to people of all backgrounds.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#platform" class="btn btn-primary">Read the full platform</a>
+        </div>
+
+
+        <div class="hero-countdown" id="countdownBox">
+          <span class="hero-count-label">Election countdown</span>
+          <span class="hero-count-time" id="countdownTime">--d --h --m --s</span>
+        </div>
+
+      </div>
+
+      </aside>
+      <aside class="hero-photo-card">
+            <video autoplay width="280" height="500" controls poster="video.png">
+        <source src="youthcouncilbetter.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Why I'm running -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Why I'm running</div>
+        <h2 class="section-title">Opening the doors &amp; building youth power</h2>
+      </div>
+
+      <div class="body-copy">
+        <p>
+          I am Milan van Dam, a youth Democratic organizer running for an At-Large seat on the Youth Council for the Eastern Region.
+          As young people in politics, we are used to being underestimated. I wasn’t born with connections or handed advantages,
+          but I’ve never let that stop me from stepping into rooms where people like me aren’t “supposed to be.”
+        </p>
+        <p>
+          I’m running for the Youth Council because I want to make those rooms broadly accessible. We need leaders who
+          will build youth power across the nation and the Eastern Region, fighting for a party that organizes in every community,
+          represents youth voices, supports our youth organizations, and is accessible to people of all backgrounds.
+        </p>
+        <p>
+          If given the opportunity to serve, I will bring the full force of my grassroots organizing experience —
+          from national organizations to local campaigns — to unite the youth Democratic movement behind a shared mission:
+          building youth and Democratic power across the region and nationwide.
+        </p>
+
+        <div class="quote-block">
+          “Young Democrats need fighters on the youth council. We deserve real action, strong support, and a meaningful representation.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Story / Rooms we aren't supposed to be in -->
+  <section id="story">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">My motivation</div>
+        <h2 class="section-title">We must unite to build youth and Democratic power</h2>
+      </div>
+
+      <div class="split-grid">
+        <div class="body-copy">
+          <p>
+            As young people in politics, we are used to being underestimated. I wasn’t born with a last name that opened doors, but that didn't stop me from fighting to build youth and Democratic power across the country.
+          </p>
+          <p>
+            On the Youth Council, I’ll carry that same mindset: work to bring in more voices, not speak over them; build structures
+            that outlast my term; and keep the focus on year-round, on-the-ground organizing that actually builds power.
+          </p>
+        </div>
+
+        <aside class="story-card">
+          <h3 style="font-size:1rem;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:10px;color:var(--blue-main);">
+            experience we need for change
+          </h3>
+          <ul class="badge-list">
+            <li>
+              <span class="badge-dot">✔</span>
+              <span>Experience leading record expansion of a DNC Youth Branch as HSDA Vice Chairman.</span>
+            </li>
+            <li>
+              <span class="badge-dot">✔</span>
+              <span>On-the-ground campaign leadership experience on several local campaigns.</span>
+            </li>
+            <li>
+              <span class="badge-dot">✔</span>
+              <span>DNC relationships and experience, having attended the last 2 DNC meetings.</span>
+            </li>
+            <li>
+              <span class="badge-dot">✔</span>
+              <span>Connections with youth organizations, campaigns, and community leaders that drieve this party.</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Organizing experience</div>
+        <h2 class="section-title">Bringing real youth organizing to the Youth Council</h2>
+        <p class="section-lede">
+          I bring to this role a demonstrated track record in youth organizing and Democratic politics,
+          from national networks to local races in my home state of Maryland.
+        </p>
+      </div>
+
+      <div class="exp-grid">
+        <article class="exp-card">
+          <div class="exp-role">High School Democrats</div>
+          <div class="exp-title">Vice Chairman</div>
+          <p class="exp-body">
+            As Vice Chairman of HSDA, I spearheaded the near-doubling of our number of local chapters and establishment of 13 new state chapters.
+            We are using this expanded network to mobilize young people in key races across the country. I previously led the Maryland High School Democrats and First-Generation Caucus.
+          </p>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-role">Young Democrats + DNC</div>
+          <div class="exp-title">Showing up for the Party</div>
+          <p class="exp-body">
+            I serve as the youngest-ever Executive Board member of my county’s Young Democrats, and have attended the past 2 DNC meetings. I also serve as a member of the AAPI Caucus' Organizing Committee.
+          </p>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-role">Campaigns &amp; grassroots</div>
+          <div class="exp-title">Local &amp; statewide race organizer</div>
+          <p class="exp-body">
+            I’ve worked with numerous campaigns up and down the ballot within my home state of Maryland, from working with Congressman Raskin to State Senate and County Council races. Showing up on-the-ground is what organizing is about.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform -->
+  <section id="platform">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Platform</div>
+        <h2 class="section-title">A plan to strenghthen our movement</h2>
+        <p class="section-lede">
+          We must organize and build something bigger, from supporting our youth organizations to establishing a stronger digital and grassroots presence for the Youth Council, we have a lot of work to do... but it's work we must do.
+        </p>
+      </div>
+
+      <div class="issues-grid">
+        <article class="issue-card">
+          <div class="issue-tag">Showing Up</div>
+          <div class="issue-title">Organizing Everywhere</div>
+          <ul class="issue-list">
+            <li>Support organizations and individuals in youth mobilization efforts across the region and nationwide</li>
+            <li>Facilitate youth voter registration efforts, from campuses to communities</li>
+            <li>Travel the region to work with and support young candidates and organizers on-the-ground</li>
+        </article>
+
+        <article class="issue-card">
+          <div class="issue-tag">Outreach</div>
+          <div class="issue-title">Rebuild the Reputation</div>
+          <ul class="issue-list">
+            <li>Broaden the reach of the Youth Council: from social media and digital strategy to building a strong presence on-the-ground</li>
+            <li>Support youth-powered campaigns with strong visions for change in their communities</li>
+            <li>Build connections to community groups and leaders to spread our message to all communities</li>
+          </ul>
+        </article>
+
+        <article class="issue-card">
+          <div class="issue-tag">Youth Power</div>
+          <div class="issue-title">Expand Representation</div>
+          <ul class="issue-list">
+            <li>Advocate for more youth representation and seats on caucuses and councils</li>
+            <li>Establish training programs for potential young candidates and campaign staffers</li>
+            <li>Improve accessibility through a youth travel fund, stronger ADA-compliance, and linguistic accessibility</li>
+          </ul>
+        </article>
+
+        <article class="issue-card">
+          <div class="issue-tag">Stronger Together</div>
+          <div class="issue-title">Supports Organizations</div>
+
+          <ul class="issue-list">
+            <li>Strengthen support and collaboration between YDA, CDA, HSDA, and the Youth Council</li>
+            <li>upport other organizations of all sizes, from national organizations to local clubs</li>
+            <li>Work with organizations to establish more chapters across the region and nationwide, especially in red and rural areas</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stakes / MAGA -->
+  <section id="stakes">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">What’s at stake</div>
+        <h2 class="section-title">Building youth power in a MAGA era</h2>
+        <p class="section-lede">
+          This isn’t a normal political moment. MAGA Republicans are actively trying to roll back progress for working people,
+          undermine democracy, and take away our futures. The Youth Council needs to meet this moment.
+        </p>
+      </div>
+      <div class="stakes-block">
+        <p>
+          As I stated during the candidate forum, "We also have to recognize that Republicans gained a lot of ground with young voters last year, and with TPUSA amassing thousands of chapters across the country and Republican megadonors throwing millions into youth organizing, it is no secret that we have to strengthen our own youth movement."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved -->
+  <section id="get-involved">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <!-- <h2 class="section-title">Join the campaign to build youth power</h2> -->
+        <p class="section-lede">
+          You can also reach out to me at 240-660-1088 or mdam@hsdems.org anytime!
+        </p>
+      </div>
+
+      <!-- <div class="involved-grid">
+        <div>
+          <div class="involved-columns">
+            <div class="involved-col"> -->
+              <!-- <h4>For DNC members</h4>
+              <ul class="involved-list">
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Pledge your support for a Youth Council focused on real organizing, not just titles.</span>
+                </li>
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Share what you need from the Youth Council to better connect with young voters.</span>
+                </li>
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Help us push for youth representation and a youth travel fund inside the DNC.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="involved-col">
+              <h4>For youth leaders &amp; organizers</h4>
+              <ul class="involved-list">
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Tell us about your youth organization, campaign, or campus work.</span>
+                </li>
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Share what support, tools, or connections you need from the national party.</span>
+                </li>
+                <li>
+                  <span class="involved-icon">✔</span>
+                  <span>Collaborate on trainings, digital content, and year-round organizing pushes.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+        <form class="contact-form" id="contactForm">
+          <div class="contact-form-title">Sign on &amp; connect with the campaign</div>
+
+          <div class="contact-row">
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input id="contactName" name="contactName" type="text" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" name="contactEmail" type="email" placeholder="you@example.com" required />
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <div class="form-group">
+              <label for="contactRole">Role</label>
+              <input id="contactRole" name="contactRole" type="text" placeholder="DNC member, youth org leader, student organizer, etc." />
+            </div>
+            <div class="form-group">
+              <label for="contactState">State</label>
+              <input id="contactState" name="contactState" type="text" placeholder="e.g., MD, PA, GA" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">What would you like to contact me about?</label>
+            <textarea id="contactMessage" name="contactMessage" placeholder="Emailing, texting, or calling me directly is more efficient anyway!"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="margin-top:4px;">Email the campaign</button>
+          <p class="contact-note">
+            When you submit, your email program will open with a message pre-filled to the campaign, so just hit send.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>Elect Milan van Dam to the DNC Youth Council At-Large • Eastern Region</div>
+        <div class="social-row">
+          <a href="https://instagram.com/milan.van.dam" class="social-pill">
+            <img src="instagram.png" alt="Instagram">
+            <span>Instagram</span>
+          </a>
+          <a href="#" class="social-pill">
+            <img src="linkedin.png" alt="LinkedIn">
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navRight = document.getElementById("navRight");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navRight.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(targetId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+          if (navRight.classList.contains("open")) {
+            navRight.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+          }
+        }
+      });
+    });
+
+    // Countdown to December 13, 2025
+    (function () {
+      const countdownTimeEl = document.getElementById("countdownTime");
+      const countdownBox = document.getElementById("countdownBox");
+      const targetDate = new Date("2025-12-13T02:00:00");
+
+      function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          countdownTimeEl.textContent = "Election Day is here!";
+          countdownBox.style.background = "rgba(63, 253, 136, 0.25)";
+          countdownBox.style.borderColor = "rgba(63, 253, 136, 0.7)";
+          return;
+        }
+
+        const seconds = Math.floor(diff / 1000);
+        const days = Math.floor(seconds / (3600 * 24));
+        const hours = Math.floor((seconds % (3600 * 24)) / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+
+        countdownTimeEl.textContent =
+          String(days).padStart(2, "0") + "d " +
+          String(hours).padStart(2, "0") + "h " +
+          String(minutes).padStart(2, "0") + "m " +
+          String(secs).padStart(2, "0") + "s";
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    })();
+
+    // Mailto-based contact form
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const role = document.getElementById("contactRole").value.trim();
+      const state = document.getElementById("contactState").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+
+      if (!name || !email) {
+        alert("Please include at least your name and email so the campaign can follow up.");
+        return;
+      }
+
+      const subject = "DNC Youth Council – East: Support from " + name;
+      let body = "";
+      body += "Name: " + name + "\n";
+      body += "Email: " + email + "\n";
+      if (role) body += "Role: " + role + "\n";
+      if (state) body += "State: " + state + "\n";
+      body += "\nHow I'd like to plug in:\n" + (message || "(No additional message)");
+
+      const mailtoLink =
+        "mailto:milan@example.com" + // << replace with your real campaign email
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>

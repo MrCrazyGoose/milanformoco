@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milan van Dam | Democratic Central Committee</title>
+  <meta name="description" content="Milan van Dam for Montgomery County Democratic Central Committee (District 15). Real action. Bold change. Organize everywhere." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+        .rotator{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        min-height: 18px;
+        overflow:hidden;
+        }
+
+        .rotator-prefix { white-space:nowrap; }
+        .rotator-dot { opacity:.85; }
+        .rotator-item{
+        display:inline-block;
+        white-space:nowrap;
+        min-width: 180px;          /* keeps the strip from jumping too much */
+        will-change: transform, opacity;
+        font-weight: 900;
+        color: #fff;
+        position: relative;
+        }
+
+        .rotator-item.fade-out{
+        animation: rotFadeOut 240ms ease forwards;
+        }
+        .rotator-item.fade-in{
+        animation: rotFadeIn 320ms ease forwards;
+        }
+
+        @keyframes rotFadeOut{
+        from { opacity: 1; transform: translateY(0); }
+        to   { opacity: 0; transform: translateY(-6px); }
+        }
+        @keyframes rotFadeIn{
+        from { opacity: 0; transform: translateY(6px); }
+        to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* optional: pause cue */
+        .rotator:hover .rotator-item { filter: brightness(1.05); }
+
+    :root{
+      --bg:#eaf2ff;
+      --card:#ffffff;
+      --ink:#0f2037;
+      --muted:#5f6b7a;
+      --blue0:#001a3b;
+      --blue1:#003f87;
+      --blue2:#0058c9;
+      --blue3:#1a82ff;
+      --accent:#ffcc4d;
+      --good:#3bfd88;
+      --shadow: 0 16px 40px rgba(0, 36, 110, .22);
+      --shadow2: 0 22px 70px rgba(0, 12, 60, .35);
+      --r: 18px;
+      --r2: 24px;
+      --t: .18s ease;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+    /* ===== Top strip ===== */
+    .strip{
+      background: linear-gradient(90deg, #011b3a, #022a5b);
+      color: rgba(255,255,255,.92);
+      font-size: .78rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .strip .row{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; flex-wrap:wrap;
+    }
+    .strip b{color:#fff}
+    .strip a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+      font-weight:700;
+      opacity:.95;
+    }
+
+    /* ===== Header / nav ===== */
+    header{
+      position:sticky; top:0; z-index:999;
+      background: rgba(0, 63, 135, .94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 30px rgba(0,0,0,.22);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 20px;
+      position:relative;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 180px;
+    }
+    .brand img{
+      height: 55px;
+      width:auto;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
+    }
+
+    .nav-right{display:flex; align-items:center; gap:22px}
+    .links{display:flex; gap:18px; align-items:center}
+    .links a{
+      color:#fff;
+      font-weight:700;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      opacity:.9;
+      position:relative;
+    }
+    .links a::after{
+      content:"";
+      position:absolute; left:0; bottom:-6px;
+      width:0; height:2px;
+      background: var(--accent);
+      transition: width var(--t);
+    }
+    .links a:hover{opacity:1}
+    .links a:hover::after{width:100%}
+    .links a.active::after{width:100%}
+    .links a.active{opacity:1}
+
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight:900;
+      font-size: .78rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      transition: transform var(--t), box-shadow var(--t), background var(--t), color var(--t), border-color var(--t);
+      cursor:pointer;
+      white-space:nowrap;
+      user-select:none;
+    }
+    .btn-primary{
+      background: var(--accent);
+      color:#13233a;
+      box-shadow: 0 14px 26px rgba(0,0,0,.28);
+    }
+    .btn-primary:hover{transform: translateY(-1px); box-shadow: 0 18px 34px rgba(0,0,0,.34)}
+    .btn-outline{
+      background: transparent;
+      border-color: rgba(255,255,255,.85);
+      color:#fff;
+    }
+    .btn-outline:hover{
+      background:#fff; color: var(--blue1);
+      transform: translateY(-1px);
+    }
+
+    .burger{display:none; flex-direction:column; gap:4px; cursor:pointer}
+    .burger span{width:22px; height:2px; background:#fff; border-radius:999px}
+
+    /* ===== Hero ===== */
+    .hero{
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(26,130,255,.55), transparent 45%),
+        radial-gradient(circle at 80% 20%, rgba(255,204,77,.22), transparent 45%),
+        linear-gradient(135deg, #003f87 0%, #002b66 45%, #001634 100%);
+      padding: 64px 0 160px;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.10)' stroke-width='2'%3E%3Cpath d='M0 320 C200 240 320 420 520 300 C640 220 700 210 800 260'/%3E%3Cpath d='M0 140 C180 80 320 220 520 150 C650 95 720 100 800 140'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat;
+      opacity:.35;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:700px; height:700px;
+      right:-260px; top:-260px;
+      border-radius:999px;
+      border: 4px solid rgba(255,255,255,.14);
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.08);
+      pointer-events:none;
+      animation: floaty 10s ease-in-out infinite;
+    }
+    @keyframes floaty{
+      0%,100%{transform: translate(0,0)}
+      50%{transform: translate(-18px, 18px)}
+    }
+
+    .hero-grid{
+      position:relative; z-index:2;
+      display:grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, .95fr);
+      gap: 34px;
+      align-items:center;
+    }
+
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.22em;
+      font-weight:900;
+      opacity:.95;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: var(--good);
+      box-shadow: 0 0 0 6px rgba(63,253,136,.22);
+    }
+    .hero h1{
+      margin-top:10px;
+      font-size: clamp(2.4rem, 3.5vw + 1rem, 3.8rem);
+      line-height: 1.02;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+    .sub{
+      margin-top: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .9rem;
+      opacity:.95;
+    }
+    .hero p{
+      margin-top: 16px;
+      max-width: 640px;
+      font-size: 1rem;
+      opacity:.96;
+    }
+
+    .hero-badges{
+      margin-top: 18px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:800;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.45);
+      background: rgba(0,0,0,.18);
+    }
+    .chip svg{opacity:.95}
+
+    .hero-cta{
+      margin-top: 22px;
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center;
+    }
+
+    .countbox{
+      margin-top: 18px;
+      display:inline-flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,.26);
+      border: 1px solid rgba(255,255,255,.25);
+      width: fit-content;
+    }
+    .countbox .label{
+      font-size:.72rem;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      font-weight:900;
+      opacity:.9;
+    }
+    .countbox .time{
+      font-weight:900;
+      letter-spacing:.14em;
+      font-size: 1.05rem;
+    }
+
+    .hero-card{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 22px;
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      backdrop-filter: blur(10px);
+    }
+    .hero-card .photo{
+      height: 310px;
+      background:#0a2245;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card .photo img{
+      width:100%; height:100%; object-fit: cover;
+      transform: scale(1.03);
+      filter: contrast(1.04) saturate(1.02);
+    }
+    .hero-card .photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, transparent 45%, rgba(0,0,0,.55) 100%);
+    }
+    .hero-card .meta{
+      padding: 14px 16px 16px;
+    }
+    .hero-card .meta .title{
+      font-size:.82rem;
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-weight:900;
+      opacity:.95;
+    }
+    .hero-card .meta .blurb{
+      margin-top: 6px;
+      font-size:.9rem;
+      opacity:.92;
+    }
+
+    /* ===== Section shells ===== */
+    section{padding: 70px 0}
+    .section-head{margin-bottom: 22px}
+    .eyebrow{
+      font-size: .78rem;
+      color: var(--blue2);
+      font-weight: 900;
+      letter-spacing:.2em;
+      text-transform: uppercase;
+    }
+    .title{
+      margin-top: 6px;
+      font-size: 1.9rem;
+      font-weight: 900;
+      letter-spacing:.02em;
+      text-transform: uppercase;
+    }
+    .lede{
+      margin-top: 10px;
+      color: var(--muted);
+      max-width: 820px;
+      font-size: .98rem;
+    }
+
+    /* ===== Cards / grids ===== */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+    .card{
+      background: var(--card);
+      border-radius: var(--r2);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.06);
+      overflow:hidden;
+      transition: transform var(--t), box-shadow var(--t);
+    }
+    .card:hover{transform: translateY(-2px); box-shadow: 0 24px 70px rgba(0,30,90,.26)}
+    .card .pad{padding: 18px}
+    .card .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color: var(--blue2)}
+    .card h3, .card h4{margin-top:6px}
+    .card h4{
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing:.02em;
+      font-weight: 900;
+    }
+    .card p{margin-top:8px;color: var(--muted); font-size:.92rem}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px}
+    .pill{
+      font-size:.74rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:900;
+      padding: 6px 10px;
+      border-radius:999px;
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,.06);
+      color: var(--blue1);
+    }
+
+    /* ===== “The Plan” Accordion ===== */
+    .accordion{display:grid; gap:12px; margin-top: 12px}
+    details{
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding: 16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .sum-left{
+      display:flex; align-items:flex-start; gap:12px;
+    }
+    .icon{
+      width:38px; height:38px; border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg, var(--blue2), var(--blue1));
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      flex:0 0 auto;
+    }
+    .sum-text .st{
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing:.06em;
+      font-size: .95rem;
+    }
+    .sum-text .sd{
+      margin-top:4px;
+      font-size: .88rem;
+      color: var(--muted);
+    }
+    .chev{
+      width: 14px; height:14px;
+      border-right: 3px solid var(--blue1);
+      border-bottom: 3px solid var(--blue1);
+      transform: rotate(45deg);
+      transition: transform var(--t);
+      margin-right: 6px;
+      flex:0 0 auto;
+    }
+    details[open] .chev{transform: rotate(225deg)}
+    .detail-body{
+      padding: 0 18px 18px 68px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .detail-body ul{padding-left:18px; margin-top:10px}
+    .detail-body li{margin-bottom:6px}
+
+    /* ===== Tabs (Reputation) ===== */
+    .tabs{
+      margin-top: 12px;
+      background:#fff;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    .tabbar{
+      display:flex; gap:6px; flex-wrap:wrap;
+      padding: 10px;
+      background: linear-gradient(90deg, rgba(0,88,201,.10), rgba(255,204,77,.12));
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .tabbtn{
+      border:none;
+      cursor:pointer;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size: .74rem;
+      background: rgba(255,255,255,.9);
+      color: var(--blue1);
+      transition: transform var(--t), background var(--t);
+    }
+    .tabbtn:hover{transform: translateY(-1px)}
+    .tabbtn.active{
+      background: var(--blue1);
+      color:#fff;
+    }
+    .tabpanel{display:none; padding: 18px}
+    .tabpanel.active{display:block}
+    .bullets{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 16px;
+      margin-top: 6px;
+    }
+    .bullet{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .check{
+      width: 22px; height:22px; border-radius: 7px;
+      background: rgba(26,130,255,.18);
+      display:flex; align-items:center; justify-content:center;
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+    .bullet b{display:block; font-size:.86rem}
+    .bullet span{display:block; font-size:.86rem; color: var(--muted); margin-top:2px}
+
+    /* ===== District module ===== */
+    .district{
+      display:grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 12px;
+    }
+    .mapcard{
+      border-radius: 24px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.06);
+      position: relative;
+    }
+    .maphead{
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      background: linear-gradient(90deg, rgba(0,88,201,.10), rgba(255,204,77,.10));
+    }
+    .maphead .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:var(--blue2)}
+    .maphead h4{margin-top:6px;font-size:1.05rem;text-transform:uppercase;font-weight:900}
+    .mapwrap{padding: 12px 12px 16px}
+    .towns{
+      display:flex; flex-wrap:wrap; gap:8px;
+    }
+    .town{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,.08);
+      background: #fff;
+      font-weight: 900;
+      letter-spacing:.12em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      cursor:pointer;
+      transition: transform var(--t), background var(--t), color var(--t), border-color var(--t);
+    }
+    .town:hover{transform: translateY(-1px)}
+    .town.active{
+      background: var(--blue1);
+      color:#fff;
+      border-color: rgba(0,0,0,.0);
+    }
+    .towninfo{
+      margin-top: 12px;
+      border-radius: 18px;
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,.06);
+      padding: 14px;
+      min-height: 120px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .towninfo b{color: var(--ink)}
+    .sidecard{
+      border-radius: 24px;
+      background: linear-gradient(135deg, #ffffff, #f7fbff);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,.06);
+      overflow:hidden;
+    }
+    .sidecard .top{
+      padding: 16px 18px;
+      background: linear-gradient(135deg, rgba(0,88,201,.12), rgba(255,204,77,.12));
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .sidecard .top .k{font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:var(--blue2)}
+    .sidecard .top h4{margin-top:6px;font-size:1.05rem;text-transform:uppercase;font-weight:900}
+    .sidecard .pad{padding: 16px 18px 18px}
+    .mini{
+      display:flex; gap:10px; align-items:flex-start;
+      padding: 12px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,.06);
+      margin-top: 10px;
+    }
+    .mini .badge{
+      width:34px; height:34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue3), var(--blue1));
+      box-shadow: 0 12px 22px rgba(0,0,0,.16);
+      flex:0 0 auto;
+      display:flex; align-items:center; justify-content:center;
+      color:#fff;
+      font-weight: 900;
+    }
+    .mini b{display:block; font-size:.9rem}
+    .mini span{display:block; font-size:.86rem; color: var(--muted); margin-top:2px}
+
+    /* ===== Quote ===== */
+    .quote{
+      margin-top: 12px;
+      border-radius: 26px;
+      color:#fff;
+      background: linear-gradient(135deg, #0058c9, #003f87);
+      box-shadow: var(--shadow2);
+      padding: 22px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .quote::before{
+      content:"";
+      position:absolute; inset:-40px;
+      background: radial-gradient(circle at 20% 20%, rgba(255,204,77,.22), transparent 45%),
+                  radial-gradient(circle at 80% 60%, rgba(26,130,255,.28), transparent 45%);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .quote p{
+      position:relative; z-index:2;
+      font-size: 1.06rem;
+      font-weight: 800;
+      letter-spacing:.01em;
+    }
+    .quote .by{
+      position:relative; z-index:2;
+      margin-top: 10px;
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.9;
+      font-weight: 900;
+    }
+
+    /* ===== Timeline ===== */
+    .timeline{
+      margin-top: 12px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .step{
+      background:#fff;
+      border: 1px solid rgba(0,0,0,.06);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 16px 16px 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .step::before{
+      content:"";
+      position:absolute;
+      width:120px; height:120px;
+      right:-50px; top:-50px;
+      border-radius:999px;
+      background: rgba(0,88,201,.12);
+    }
+    .step .n{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:34px; height:34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue2), var(--blue1));
+      color:#fff;
+      font-weight: 900;
+      box-shadow: 0 12px 22px rgba(0,0,0,.18);
+    }
+    .step h4{
+      margin-top: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: .98rem;
+    }
+    .step p{margin-top: 6px; color: var(--muted); font-size:.9rem}
+
+    /* ===== Contact ===== */
+    .contact{
+      background: linear-gradient(135deg, #002b66, #001634);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .contact::before{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(circle at 15% 20%, rgba(26,130,255,.35), transparent 45%),
+                  radial-gradient(circle at 80% 80%, rgba(255,204,77,.18), transparent 45%);
+      pointer-events:none;
+    }
+    .contact .grid2{
+      position:relative; z-index:2;
+      display:grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+      gap: 18px;
+      align-items:start;
+      margin-top: 12px;
+    }
+    .form{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 22px;
+      box-shadow: var(--shadow2);
+      padding: 16px 16px 18px;
+      backdrop-filter: blur(10px);
+    }
+    .form .ft{
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing:.16em;
+      font-size: .82rem;
+      opacity:.95;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    label{
+      display:block;
+      font-size:.74rem;
+      text-transform: uppercase;
+      letter-spacing:.14em;
+      font-weight: 900;
+      opacity:.88;
+      margin-bottom: 6px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(0,0,0,.22);
+      color:#fff;
+      outline:none;
+      font-family: inherit;
+      font-size: .92rem;
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(255,204,77,.75);
+      box-shadow: 0 0 0 2px rgba(255,204,77,.25);
+    }
+    textarea{min-height: 120px; resize: vertical}
+    .note{
+      margin-top: 8px;
+      font-size:.8rem;
+      opacity:.82;
+    }
+    .contactlist{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 22px;
+      box-shadow: var(--shadow2);
+      padding: 16px 16px 18px;
+      backdrop-filter: blur(10px);
+    }
+    .contactlist h4{
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing:.16em;
+      font-size: .86rem;
+    }
+    .cl{
+      margin-top: 10px;
+      display:grid;
+      gap: 10px;
+    }
+    .cl a{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid rgba(255,255,255,.14);
+      transition: transform var(--t);
+      font-size:.92rem;
+    }
+    .cl a:hover{transform: translateY(-1px)}
+    .cl img{width:18px;height:18px;filter:brightness(0) invert(1)}
+    .cl b{font-weight:900}
+
+    /* ===== Footer ===== */
+    footer{
+      background: #020b1a;
+      color: rgba(255,255,255,.82);
+      font-size:.78rem;
+      padding: 14px 0 18px;
+    }
+    .foot{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; flex-wrap:wrap;
+    }
+    .foot .paid{opacity:.85}
+    .foot .minirow{display:flex; gap:10px; flex-wrap:wrap}
+    .sbadge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border-radius:999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      font-size:.78rem;
+    }
+    .sbadge img{width:16px;height:16px;}
+
+    /* ===== Floating CTA ===== */
+    .fab{
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1000;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.75);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 22px 60px rgba(0,0,0,.35);
+      color:#fff;
+      backdrop-filter: blur(10px);
+    }
+    .fab .tiny{
+      font-size:.72rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-weight:900;
+      opacity:.9;
+    }
+    .fab .go{
+      padding: 8px 12px;
+      border-radius:999px;
+      background: var(--accent);
+      color:#13233a;
+      font-weight: 900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      border:none;
+      cursor:pointer;
+      transition: transform var(--t);
+    }
+    .fab .go:hover{transform: translateY(-1px)}
+    .fab .close{
+      width:30px;height:30px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color:#fff;
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      transition: transform var(--t);
+    }
+    .fab .close:hover{transform: translateY(-1px)}
+
+    /* ===== Responsive ===== */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .hero-card .photo{height: 280px}
+      .district{grid-template-columns: 1fr}
+      .timeline{grid-template-columns: 1fr}
+      .bullets{grid-template-columns: 1fr}
+      .contact .grid2{grid-template-columns: 1fr}
+    }
+    @media (max-width: 820px){
+      .burger{display:flex}
+      .nav-right{
+        position:absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(0,63,135,.98);
+        border-top: 1px solid rgba(255,255,255,.14);
+        padding: 12px 20px 16px;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap: 12px;
+      }
+      .nav-right.open{display:flex}
+      .links{flex-direction:column; align-items:flex-start; width:100%}
+      .actions{width:100%}
+    }
+    @media (max-width: 520px){
+      .row{grid-template-columns: 1fr}
+      .hero{padding: 56px 0 64px}
+      .brand img{height: 42px}
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Top strip -->
+<div class="strip">
+  <div class="container row">
+    <div class="rotator" aria-label="District 15 communities rotator">
+      <span class="rotator-prefix"><b>Vote June 23rd (Early Voting: June 11-18th) • District 15</b></span>
+      <span class="rotator-dot">•</span>
+      <span class="rotator-item" id="rotatorItem">Poolesville</span>
+    </div>
+
+    <a href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign!</a>
+  </div>
+</div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="campaign-logo.png" alt="Milan van Dam for Democratic Central Committee (District 15)">
+      </div>
+
+      <div class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="nav-right" id="navRight">
+        <nav class="links" id="links">
+          <a href="#home" data-section="home">Home</a>
+          <a href="#about" data-section="about">About</a>
+          <a href="#plan" data-section="plan">Plan</a>
+          <!-- <a href="#district" data-section="district">District</a> -->
+          <a href="#get-involved" data-section="get-involved">Contact</a>
+        </nav>
+        <div class="actions">
+          <a class="btn btn-outline" href="#plan">Read the plan</a>
+          <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the campaign</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker"><span class="dot"></span> Real action. Bold change.</div>
+
+        <h1>Milan van Dam</h1>
+        <div class="sub">Montgomery County Democratic Central Committee • District 15</div>
+
+        <p>
+          Child of immigrants. Community activist. Democratic organizer.
+          Fighting for a party that <b>organizes year-round</b>,
+          <b>stands up to Trump &amp; MAGA</b>, and <b>works for working people</b>, not special interests.
+        </p>
+
+        <div class="hero-badges">
+          <div class="chip">
+            <!-- megaphone icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V7L7 11H5a2 2 0 0 0-2 2Z" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 8.5c3.5 0 6-2 7-3v13c-1-1-3.5-3-7-3" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Organizer
+          </div>
+          <div class="chip">
+            <!-- shield icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Real vision
+          </div>
+          <div class="chip">
+            <!-- users icon -->
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M9.5 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            For the people
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+          <a class="btn btn-outline" href="#district">See District 15</a>
+        </div>
+
+        <div class="countbox" id="countBox">
+          <div class="label">Election Day (June 23rd) is in...</div>
+          <div class="time" id="countTime">--d --h --m --s</div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="photo">
+          <img src="headshot.png" alt="Milan van Dam">
+        </div>
+        <div class="meta">
+          <div class="title">Building, organizing, and resisting</div>
+          <div class="blurb">
+            “We are fighting for a party that organizes year-round and builds the grassroots infastructure we need to defeat MAGA and deliver Democratic wins.”
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">About Milan</div>
+        <div class="title">I'm an organizer, not a politician</div>
+        <div class="lede">
+          As a child of immigrants, organizer, and community activist, I know what it's like to fight on-the-ground. 
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="card" style="grid-column: span 7;">
+          <div class="pad">
+            <div class="k">Why I’m running</div>
+            <h4>Montgomery County needs a party that delivers</h4>
+            <p>
+              I’m running for Democratic Central Committee in District 15 to build strong and year-round grassroots organizing infastructure, stand up for our immigrant and marginalized communities, and take the Trump Administration. I've proven I can do that work: helping run one of the largest nationwide grassroots Democratic organizations, organizing for campaigns and initiatives across the county and the state, and advocating for increased accessibility and accountability within the state party and DNC.
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 5;">
+          <div class="pad">
+            <h4>Real action. Bold change.</h4>
+
+            <div class="mini" style="margin-top:14px;">
+              <div class="badge">15</div>
+              <div>
+                <b>Unsure if you're in Legislative District 15?</b>
+                <span><a href="https://mgaleg.maryland.gov/mgawebsite/Members/District#divQuery">Check here!</a></span>
+              </div>
+            </div>
+
+            <div class="mini">
+              <div class="badge">✓</div>
+              <div>
+                <b>Make sure you're ready to vote in June!</b>
+                <span><a href="https://www.montgomerycountymd.gov/elections/index2.html">Click here!</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote">
+        <p>
+          "We all know these are not ordinary times. We need change, and we need a new generation of leadership to move the party forward and fight for Montgomery County. You deserve a party that works for you, and leaders that work as hard as you do.”
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan -->
+  <section id="plan">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">The plan</div>
+        <div class="title">Fighting for a party that…</div>
+      </div>
+
+      <div class="accordion">
+        <details open>
+          <summary>
+            <div class="sum-left">
+              <div class="icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V7L7 11H5a2 2 0 0 0-2 2Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 8.5c3.5 0 6-2 7-3v13c-1-1-3.5-3-7-3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="sum-text">
+                <div class="st">Organizes everywhere and year-round</div>
+                <div class="sd">In these trying times, we cannot leave any community behind, any time unused, or any potential untapped.</div>
+              </div>
+            </div>
+            <div class="chev"></div>
+          </summary>
+          <div class="detail-body">
+            <ul>
+              <li>Invest in <b>year-round field work</b> in District 15 and countywide, working with precinct leaders and clubs.</li>
+              <li>Prioritize <b>precinct-level and club-based organizing</b> and building strong volunteer pipelines.</li>
+              <li>Establish campaign <b>training programs</b>, organize midterm <b>phonebanks and canvasses.</b></li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <div class="sum-left">
+              <div class="icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="sum-text">
+                <div class="st">Stands up to Trump &amp; MAGA</div>
+                <div class="sd">Our communities are under attack, and we have to fight back.</div>
+              </div>
+            </div>
+            <div class="chev"></div>
+          </summary>
+          <div class="detail-body">
+            <ul>
+              <li>Build digital rapid response capacity and rebuild the central committee's social media presence.</li>
+              <li>Unite organizations, communities, and campaigns against Trump's action.</li>
+              <li>Make the local party a force for action, from <b>protests to phonebanks</b>.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <div class="sum-left">
+              <div class="icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 21h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M5 21V8l7-5 7 5v13" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M9 21v-8h6v8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="sum-text">
+                <div class="st">Build a party that works for the people</div>
+                <div class="sd">Make our party more representative and focused on delivering real results.</div>
+              </div>
+            </div>
+            <div class="chev"></div>
+          </summary>
+          <div class="detail-body">
+            <ul>
+              <li>Move towards <b>special elections</b> from the appointment system.</li>
+              <li>Host regular town halls, record meetings, and open a feedback form for the party.</li>
+              <li>Show up to local events and maintain regular communication with community leaders.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details>
+          <summary>
+            <div class="sum-left">
+              <div class="icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="sum-text">
+                <div class="st">Defends our communities &amp; rejects hate</div>
+                <div class="sd">A party that reflects our diversity and protects our most vulnerable.</div>
+              </div>
+            </div>
+            <div class="chev"></div>
+          </summary>
+          <div class="detail-body">
+            <ul>
+              <li>Stand up for immigrant communities with consistent advocacy and presence.</li>
+              <li>Reject <b>antisemitism and hate</b> clearly and consistently.</li>
+              <li>Work closely with our clubs to ensure all voices are heard, including high school, college, and young Democrats.</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+
+      <!-- <div class="tabs" style="margin-top:18px;">
+        <div class="tabbar">
+          <button class="tabbtn active" data-tab="tab1">Rebuild trust</button>
+          <button class="tabbtn" data-tab="tab2">Modernize</button>
+          <button class="tabbtn" data-tab="tab3">Mobilize</button>
+        </div>
+
+        <div class="tabpanel active" id="tab1">
+          <div class="k">Rebuilding the party’s reputation</div>
+          <h4 style="margin-top:6px;text-transform:uppercase;font-weight:900;">Stop looking like an insider club</h4>
+          <div class="bullets">
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Show up year-round</b><span>Not just when votes are on the line.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Be visible in the community</b><span>Service, listening, and follow-through.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Center working people</b><span>Schools, housing, healthcare, jobs.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Reject hate, consistently</b><span>No ambiguity. No tolerance for antisemitism or extremism.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="tab2">
+          <div class="k">Modernize</div>
+          <h4 style="margin-top:6px;text-transform:uppercase;font-weight:900;">Make organizing easier for volunteers</h4>
+          <div class="bullets">
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Simple volunteer onboarding</b><span>Clear roles, training, and follow-ups.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Better communications</b><span>Useful updates, not just announcements.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Data-driven organizing</b><span>Measure what grows turnout and engagement.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Neighborhood-level strategy</b><span>Precinct-first organizing culture.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="tab3">
+          <div class="k">Mobilize</div>
+          <h4 style="margin-top:6px;text-transform:uppercase;font-weight:900;">Build real power, not just posts</h4>
+          <div class="bullets">
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Protests to phone banks</b><span>Meet people where they are; convert energy into action.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Local candidate support</b><span>Grow and support the bench consistently.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Community partnerships</b><span>Show up with groups doing the work already.</span></div>
+            </div>
+            <div class="bullet">
+              <div class="check">✓</div>
+              <div><b>Volunteer leadership pipeline</b><span>Train new precinct captains and organizers.</span></div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </section>
+
+  <!-- District 15 -->
+  <!-- <section id="district">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">District 15</div>
+        <div class="title">Potomac → Poolesville — and everything in between</div>
+        <div class="lede">
+          District 15 is diverse in geography and community needs. This campaign is about showing up everywhere, not just the easiest places.
+        </div>
+      </div>
+
+      <div class="district">
+        <div class="mapcard">
+          <div class="maphead">
+            <div class="k">Choose a community</div>
+            <h4>What “organize everywhere” looks like</h4>
+          </div>
+          <div class="mapwrap">
+            <div class="towns" id="towns">
+              <button class="town active" data-town="potomac">Potomac</button>
+              <button class="town" data-town="bethesda">Bethesda</button>
+              <button class="town" data-town="rockville">Rockville</button>
+              <button class="town" data-town="northbethesda">North Bethesda</button>
+              <button class="town" data-town="gaithersburg">Gaithersburg</button>
+              <button class="town" data-town="poolesville">Poolesville</button>
+              <button class="town" data-town="germantown">Germantown (nearby)</button>
+              <button class="town" data-town="rural">Rural &amp; Ag Reserve</button>
+            </div>
+
+            <div class="towninfo" id="towninfo">
+              <b>Potomac:</b> Organize beyond election season—community visibility, volunteer leadership, and consistent precinct work.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidecard">
+          <div class="top">
+            <div class="k">District 15 priorities</div>
+            <h4>Deliver + defend</h4>
+          </div>
+          <div class="pad">
+            <div class="mini">
+              <div class="badge">🏫</div>
+              <div><b>Fully fund public schools</b><span>Students, staff, and families first.</span></div>
+            </div>
+            <div class="mini">
+              <div class="badge">🏠</div>
+              <div><b>Affordable housing</b><span>Keep the county livable for working people.</span></div>
+            </div>
+            <div class="mini">
+              <div class="badge">🩺</div>
+              <div><b>Protect Medicare &amp; Medicaid</b><span>Defend healthcare and federal workers.</span></div>
+            </div>
+            <div class="mini">
+              <div class="badge">🛡️</div>
+              <div><b>Reject hate</b><span>Clear stance against antisemitism and extremism.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section> -->
+
+  <!-- Get involved -->
+  <section id="get-involved" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" style="color: rgba(255,204,77,.95);">Contact</div>
+        <div class="title">Get in contact, get involved</div>
+        <div class="lede" style="color: rgba(255,255,255,.86);">
+          Want to help out, have a question, or need assistance? Send us a message and we'll follow up.
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="contactlist">
+          <h4>Quick links & contact information</h4>
+          <div class="cl">
+            <a href="tel:240-660-1088"><b>Phone:</b> 240-660-1088</a>
+            <a href="https://milanformoco.com" target="_blank" rel="noreferrer"><b>Website: </b> milanformoco.org</a>
+            <a href="mailto:milanformoco@gmail.com" target="_blank" rel="noreferrer"><b>Email: </b> milanformoco@gmail.com</a>
+            <a href="https://instagram.com/milanformoco">
+              <span><b>Instagram/Facebook:</b> @milanformoco</span>
+            </a>
+          </div>
+          <div class="note" style="margin-top:12px;">
+            We guarentee responses within 24 hours. Further, we are happy to set up 1-1 calls or an in-person meeting to discuss your priorities. We are working to EARN your vote.
+          </div>
+        </div>
+
+        <div class="form" id="contactForm">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQqZczHzEC6ta-oj567uoYGu5xI20CEa_SFRwP52TCMuyPzA/viewform?embedded=true" width="450" height="285" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div class="paid">By Authority: Friends of Milan Van Dam; Ramachandra Mukunda, Treasurer.</div>
+      <div class="minirow">
+        <span class="sbadge"><img src="instagram.png" alt="Instagram"> @milanformoco</span>
+        <span class="sbadge">Vote • June 23</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="fab" id="fab">
+    <div>
+      <div class="tiny">June 23 • District 15</div>
+      <div style="font-weight:900;letter-spacing:.02em;">JOIN THE CAMPAIGN</div>
+    </div>
+    <a class="go" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Sign up</a>
+    <button class="close" id="fabClose" aria-label="Close">×</button>
+  </div>
+
+  <script>
+    // ===== Mobile nav toggle
+    const burger = document.getElementById('burger');
+    const navRight = document.getElementById('navRight');
+    burger?.addEventListener('click', () => {
+      const open = navRight.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close nav after click (mobile)
+    document.querySelectorAll('.links a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (navRight.classList.contains('open')) {
+          navRight.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // ===== Scrollspy
+    const sections = ['home','about','plan','get-involved']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const linkMap = new Map();
+    document.querySelectorAll('.links a[data-section]').forEach(a => linkMap.set(a.dataset.section, a));
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          linkMap.forEach(l => l.classList.remove('active'));
+          const id = entry.target.id;
+          const a = linkMap.get(id);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { root: null, threshold: 0.55 });
+
+    sections.forEach(s => spy.observe(s));
+
+    // ===== Tabs
+    const tabBtns = document.querySelectorAll('.tabbtn');
+    const panels = document.querySelectorAll('.tabpanel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const id = btn.dataset.tab;
+        panels.forEach(p => p.classList.remove('active'));
+        document.getElementById(id)?.classList.add('active');
+      });
+    });
+
+    // ===== District 15 town selector
+    const townCopy = {
+      potomac: "Organize beyond election season—community visibility, volunteer leadership, and consistent precinct work.",
+      bethesda: "Meet people where they are: community org partnerships, issue-based organizing, and precinct growth.",
+      rockville: "Build a year-round volunteer pipeline that connects local concerns to measurable organizing action.",
+      northbethesda: "Strengthen neighborhood-level organizing and show up for working families on schools and affordability.",
+      gaithersburg: "Support working people with visible organizing and real follow-through—not just announcements.",
+      poolesville: "Organize everywhere means rural communities too—consistent presence and respect for local priorities.",
+      germantown: "Coordinate across borders—turn energy into turnout, and turnout into power year after year.",
+      rural: "Ag Reserve and rural communities deserve a party that shows up consistently—not only when convenient."
+    };
+
+    const townInfo = document.getElementById('towninfo');
+    document.querySelectorAll('.town').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.town').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const key = btn.dataset.town;
+        townInfo.innerHTML = `<b>${btn.textContent.replace(' (nearby)','')}:</b> ${townCopy[key] || ""}`;
+      });
+    });
+
+    // ===== Countdown to June 23 (adjust year/time as needed)
+    const countTime = document.getElementById('countTime');
+    const countBox = document.getElementById('countBox');
+
+    // IMPORTANT: set the correct year/time for your election
+    const electionDate = new Date("2026-06-23T00:00:00-04:00");
+
+    function tick(){
+      const now = new Date();
+      const diff = electionDate - now;
+
+      if (diff <= 0){
+        countTime.textContent = "Election Day is here!";
+        countBox.style.background = "rgba(63, 253, 136, 0.20)";
+        countBox.style.borderColor = "rgba(63, 253, 136, 0.55)";
+        return;
+      }
+
+      const s = Math.floor(diff / 1000);
+      const d = Math.floor(s / (3600*24));
+      const h = Math.floor((s % (3600*24)) / 3600);
+      const m = Math.floor((s % 3600) / 60);
+      const ss = s % 60;
+
+      countTime.textContent =
+        String(d).padStart(2,'0') + "d " +
+        String(h).padStart(2,'0') + "h " +
+        String(m).padStart(2,'0') + "m " +
+        String(ss).padStart(2,'0') + "s";
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ===== Mailto contact form (clean encoding; avoids "contactName=..." issue)
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const neighborhood = document.getElementById('contactNeighborhood').value.trim();
+      const help = document.getElementById('contactHelp').value.trim();
+      const msg = document.getElementById('contactMessage').value.trim();
+
+      if (!name || !email) {
+        alert("Please include your name and email.");
+        return;
+      }
+
+      const subject = `District 15 Campaign Support — ${name}`;
+      const lines = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        neighborhood ? `Neighborhood/Town: ${neighborhood}` : null,
+        help ? `Can help with: ${help}` : null,
+        "",
+        "Message:",
+        msg || "(No additional message)"
+      ].filter(Boolean);
+
+      const body = lines.join("\r\n"); // CRLF helps some email clients
+      const mailto = `mailto:milanvandam99@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+    });
+
+    // ===== Floating CTA close
+    const fab = document.getElementById('fab');
+    document.getElementById('fabClose').addEventListener('click', () => fab.style.display = 'none');
+  // ===== Top strip rotator (District 15 communities + Vote June 23)
+const rotatorItemEl = document.getElementById("rotatorItem");
+
+const rotatorItems = [
+  "Poolesville",
+  "Barnesville",
+  "Clarksburg",
+  "Germantown",
+  "North Potomac",
+  "Travilah",
+  "Darnestown",
+  "Comus",
+  "Boyds",
+  "Dickerson",
+  "Beallsville",
+  "Dawsonville",
+  "Laytonsville",
+  "Vote June 23"
+];
+
+let rotatorIndex = 0;
+let rotatorTimer = null;
+let rotatorPaused = false;
+
+function setRotatorText(nextText){
+  if (!rotatorItemEl) return;
+
+  rotatorItemEl.classList.remove("fade-in");
+  rotatorItemEl.classList.add("fade-out");
+
+  setTimeout(() => {
+    rotatorItemEl.textContent = nextText;
+    rotatorItemEl.classList.remove("fade-out");
+    rotatorItemEl.classList.add("fade-in");
+  }, 220);
+}
+
+function startRotator(){
+  if (!rotatorItemEl) return;
+
+  rotatorTimer = setInterval(() => {
+    if (rotatorPaused) return;
+    rotatorIndex = (rotatorIndex + 1) % rotatorItems.length;
+    setRotatorText(rotatorItems[rotatorIndex]);
+  }, 1400); // speed: 1.4s per item
+}
+
+// Optional: pause on hover
+const rotatorWrap = rotatorItemEl?.closest(".rotator");
+if (rotatorWrap){
+  rotatorWrap.addEventListener("mouseenter", () => rotatorPaused = true);
+  rotatorWrap.addEventListener("mouseleave", () => rotatorPaused = false);
+}
+
+startRotator();
+
+  
+  </script>
+</body>
+</html>
