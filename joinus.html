@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join the Campaign | Milan van Dam · District 15</title>
+  <meta name="description" content="Volunteer for Milan van Dam's campaign for Montgomery County Democratic Central Committee, District 15." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink:     #0d0d0d;
+      --ink2:    #2a2a2a;
+      --muted:   #5c5c5c;
+      --rule:    rgba(0,0,0,.12);
+      --bg:      #f5f2ec;
+      --cream:   #faf8f4;
+      --red:     #c0392b;
+      --red2:    #9b1c0e;
+      --gold-lt: #f0c84a;
+      --white:   #ffffff;
+      --navy:    #0d1f3c;
+      --r:       4px;
+      --t:       .2s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: inherit; text-decoration: none; }
+    a, button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+
+    /* TICKER */
+    .ticker { background: var(--navy); color: rgba(255,255,255,.9); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; padding: 9px 0; overflow: hidden; border-bottom: 2px solid var(--red); }
+    .ticker-inner { display: flex; align-items: center; white-space: nowrap; animation: tickerScroll 28s linear infinite; width: max-content; }
+    .ticker-inner:hover { animation-play-state: paused; }
+    .ticker-sep { display: inline-block; margin: 0 28px; color: var(--gold-lt); font-size: .9rem; }
+    @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* HEADER */
+    header { position: sticky; top: 0; z-index: 900; background: var(--cream); border-bottom: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule), 0 4px 20px rgba(0,0,0,.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 1.25rem; color: var(--navy); letter-spacing: -.01em; }
+    .brand-sub { font-size: .66rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
+    .nav-links a { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); position: relative; padding-bottom: 3px; transition: color var(--t); }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--red); transition: width var(--t); }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-actions { display: flex; gap: 10px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; border: 2px solid transparent; border-radius: var(--r); cursor: pointer; transition: background var(--t), color var(--t), border-color var(--t), transform var(--t); white-space: nowrap; }
+    .btn-ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: var(--white); }
+    .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); box-shadow: 0 4px 16px rgba(192,57,43,.35); }
+    .btn-primary:hover { background: var(--red2); border-color: var(--red2); transform: translateY(-1px); }
+
+    /* BURGER */
+    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; margin: -10px; background: none; border: none; }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+
+    /* MOBILE MENU */
+    .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 3px solid var(--red); box-shadow: 0 8px 20px rgba(0,0,0,.1); z-index: 10; }
+    .mobile-menu a { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); padding: 14px 28px; border-bottom: 1px solid var(--rule); display: block; }
+    .mobile-menu .btn { margin: 12px 28px 16px; justify-content: center; border-bottom: none; padding: 10px 20px; }
+
+    /* PAGE CONTENT */
+    .page { flex: 1; padding: 72px 0 80px; }
+    .page-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* LEFT — description */
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--red); flex-shrink: 0; }
+    .page-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 3vw + .8rem, 3rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; color: var(--navy); }
+    .page-title em { font-style: italic; color: var(--red); }
+    .page-rule { margin: 20px 0; width: 48px; height: 3px; background: var(--red); }
+    .page-desc p { font-size: .98rem; color: var(--ink2); line-height: 1.78; margin-top: 16px; }
+    .page-desc p:first-child { margin-top: 0; }
+
+    .ways { margin-top: 28px; display: flex; flex-direction: column; gap: 10px; }
+    .way {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--navy);
+    }
+    .way-icon {
+      width: 36px; height: 36px;
+      border-radius: var(--r);
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--white);
+    }
+    .way b { display: block; font-size: .9rem; color: var(--navy); font-weight: 700; }
+    .way span { display: block; font-size: .84rem; color: var(--muted); margin-top: 2px; }
+
+    .contact-note {
+      margin-top: 24px;
+      padding: 16px 18px;
+      background: var(--navy);
+      color: rgba(255,255,255,.82);
+      font-size: .86rem;
+      line-height: 1.65;
+    }
+    .contact-note strong { color: var(--gold-lt); }
+    .contact-note a { text-decoration: underline; text-underline-offset: 3px; opacity: .85; }
+
+    /* RIGHT — form */
+    .form-panel {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-top: 4px solid var(--red);
+      padding: 28px 28px 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      position: sticky;
+      top: 100px;
+    }
+    .form-panel .f-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.2rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .form-panel .f-sub { font-size: .82rem; color: var(--muted); margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+    .form-panel iframe { width: 100%; border: none; display: block; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,.55); }
+    .footer-bottom { padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .74rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .page-inner { grid-template-columns: 1fr; gap: 36px; }
+      .form-panel { position: static; }
+    }
+    @media (max-width: 700px) {
+      .nav-links, .nav-actions { display: none; }
+      .burger { display: flex; }
+      .page { padding: 48px 0 60px; }
+    }
+    @media (max-width: 500px) {
+      .container { padding: 0 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      Vote June 23, 2026 <span class="ticker-sep">★</span>
+      Early Voting: June 11–18 <span class="ticker-sep">★</span>
+      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
+      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
+      Real Action. Bold Change. <span class="ticker-sep">★</span>
+      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
+      District 15 · Montgomery County <span class="ticker-sep">★</span>
+      Vote June 23, 2026 <span class="ticker-sep">★</span>
+      Early Voting: June 11–18 <span class="ticker-sep">★</span>
+      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
+      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
+      Real Action. Bold Change. <span class="ticker-sep">★</span>
+      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
+      District 15 · Montgomery County <span class="ticker-sep">★</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="nav">
+      <div class="brand">
+        <a href="index.html">
+          <div class="brand-text">
+            <div class="brand-name">Milan van Dam</div>
+            <div class="brand-sub">MCDCC · District 15</div>
+          </div>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#plan">Platform</a></li>
+        <li><a href="index.html#get-involved">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="index.html#get-involved">Contact</a>
+        <a class="btn btn-primary" href="https://secure.actblue.com/donate/milanformoco">Donate</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#plan">Platform</a>
+      <a href="index.html#get-involved">Contact</a>
+      <a class="btn btn-primary" href="https://forms.gle/uhWpH2LP7MGfS6Wz8">Join the Campaign</a>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="page">
+    <div class="container">
+      <div class="page-inner">
+
+        <!-- LEFT: description -->
+        <div>
+          <div class="eyebrow">Get Involved</div>
+          <div class="page-title">Join the<br><em>campaign</em></div>
+          <div class="page-rule"></div>
+
+          <div class="page-desc">
+            <p>We are building a grassroots campaign and we need people like you! Whether you can knock doors for an afternoon or help organize a neighborhood, anything you can contribute makes a real difference.</p>
+            <p>Wherever you are, how much time you have, or what you're able to do—we need your help to win this race.</p>
+          </div>
+
+          <div class="ways">
+            <div class="way">
+              <div class="way-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <b>Door Knocking</b>
+                <span>Talk to voters in your neighborhood ahead of the June 23 election.</span>
+              </div>
+            </div>
+            <div class="way">
+              <div class="way-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <b>Phone &amp; Text Banking</b>
+                <span>Call or text voters from home. This is super flexible, but has a big impact!</span>
+              </div>
+            </div>
+            <div class="way">
+              <div class="way-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <b>Event &amp; Community Organizing</b>
+                <span>Help plan and run campaign events and initiatives across the district.</span>
+              </div>
+            </div>
+            <div class="way">
+              <div class="way-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <b>Digital &amp; Social Media</b>
+                <span>Help spread the word online and grow our presence, from Facebook posts to digital ads.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-note">
+            Questions? Email us at <a href="mailto:milanformoco@gmail.com">milanformoco@gmail.com</a> or text <a href="tel:240-660-1088">240-660-1088</a>. We <strong>guarantee a response within 24 hours</strong>.
+          </div>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div class="form-panel">
+          <div class="f-title">Sign up to volunteer</div>
+          <div class="f-sub">Fill out the form and we'll reach out with next steps.</div>
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeQqZczHzEC6ta-oj567uoYGu5xI20CEa_SFRwP52TCMuyPzA/viewform?embedded=true"
+            height="600"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Volunteer Sign-Up Form">
+            Loading…
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        <div>By Authority: Friends of Milan Van Dam; Ramachandra Mukunda, Treasurer.</div>
+        <div>Real Action. Bold Change. District 15.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var burger = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', function() {
+          mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        mobileMenu.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            mobileMenu.style.display = 'none';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
