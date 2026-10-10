@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milan van Dam — National Chair, High School Democrats of America</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D;
+    --paper:#F3EFE6;
+    --paper-dim:#EAE4D4;
+    --gold:#E8A33D;
+    --blue:#1F3A5F;
+    --brick:#B23A2E;
+    --line: rgba(22,24,29,0.15);
+    --max: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:'Anton', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.92;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:2px solid var(--ink);
+  }
+  .navbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .navbar .mark{
+    font-family:'Anton', sans-serif;
+    font-size:20px;
+    letter-spacing:0.02em;
+  }
+  .navbar nav{display:flex; gap:28px;}
+  .navbar nav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .15s ease;
+  }
+  .navbar nav a:hover{border-color:var(--brick);}
+  .navbar .menu-btn{display:none;}
+
+  /* HERO */
+  .hero{
+    padding:72px 0 40px;
+    border-bottom:2px solid var(--ink);
+  }
+  .hero .eyebrow{
+    font-size:12px;
+    color:var(--brick);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;
+    background:var(--brick);
+    display:inline-block;
+    border-radius:50%;
+  }
+  .hero h1{
+    font-size:clamp(52px, 11vw, 128px);
+    margin:0 0 6px;
+  }
+  .hero h1 span{color:var(--blue);}
+  .hero .role{
+    font-size:clamp(16px,2.4vw,22px);
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink);
+    margin:10px 0 26px;
+  }
+  .hero .tagline{
+    max-width:620px;
+    font-size:19px;
+    line-height:1.55;
+    margin:0 0 34px;
+  }
+  .hero .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    padding:14px 22px;
+    text-decoration:none;
+    display:inline-block;
+    border:2px solid var(--ink);
+    transition:transform .12s ease, background .12s ease, color .12s ease;
+  }
+  .btn.solid{background:var(--ink); color:var(--paper);}
+  .btn.solid:hover{background:var(--brick); border-color:var(--brick); transform:translateY(-2px);}
+  .btn.outline:hover{background:var(--ink); color:var(--paper); transform:translateY(-2px);}
+
+  /* MARQUEE - signature element */
+  .marquee{
+    background:var(--ink);
+    color:var(--paper);
+    overflow:hidden;
+    white-space:nowrap;
+    border-bottom:2px solid var(--ink);
+  }
+  .marquee-track{
+    display:inline-flex;
+    animation: scroll 28s linear infinite;
+  }
+  .marquee-track span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:14px 0;
+    display:inline-flex;
+    align-items:center;
+  }
+  .marquee-track span::after{
+    content:"//";
+    color:var(--gold);
+    margin:0 28px;
+  }
+  @keyframes scroll{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{animation:none;}
+  }
+
+  /* SECTION SHELL */
+  section{padding:64px 0; border-bottom:2px solid var(--line);}
+  .section-head{
+    display:flex; align-items:baseline; gap:16px;
+    margin-bottom:34px;
+  }
+  .section-head .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--brick);
+    font-size:13px;
+  }
+  .section-head h2{
+    font-size:clamp(26px,4vw,38px);
+    margin:0;
+  }
+  .section-head .rule{flex:1; height:2px; background:var(--line);}
+
+  /* ABOUT */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap:48px;
+    align-items:start;
+  }
+  .about-grid p{font-size:18px; line-height:1.7; margin:0 0 18px;}
+  .about-grid .note{
+    font-style:italic; color:#5b5b52; font-size:15px;
+  }
+  .stat-card{
+    border:2px solid var(--ink);
+    padding:22px;
+    background:var(--paper-dim);
+  }
+  .stat-card + .stat-card{margin-top:16px;}
+  .stat-card .num{
+    font-family:'Anton', sans-serif;
+    font-size:40px;
+    color:var(--blue);
+    line-height:1;
+  }
+  .stat-card .lbl{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-top:8px;
+    color:#3a3a35;
+  }
+
+  /* TIMELINE */
+  .timeline{border-left:2px solid var(--ink); margin-left:6px;}
+  .tl-item{
+    position:relative;
+    padding:0 0 44px 34px;
+  }
+  .tl-item:last-child{padding-bottom:4px;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-9px; top:2px;
+    width:16px; height:16px;
+    background:var(--gold);
+    border:2px solid var(--ink);
+    border-radius:50%;
+  }
+  .tl-item .yr{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:var(--brick);
+    margin-bottom:6px;
+    display:block;
+  }
+  .tl-item h3{font-size:22px; margin:0 0 8px;}
+  .tl-item p{font-size:16px; line-height:1.6; margin:0; max-width:640px; color:#2c2c28;}
+
+  /* PLATFORM */
+  .platform-grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:2px;
+    background:var(--ink);
+    border:2px solid var(--ink);
+  }
+  .plank{
+    background:var(--paper);
+    padding:28px;
+  }
+  .plank .mono{font-size:11px; color:var(--brick); display:block; margin-bottom:10px;}
+  .plank h3{font-size:20px; margin:0 0 10px;}
+  .plank p{font-size:15px; line-height:1.6; margin:0; color:#2c2c28;}
+
+  /* CONTACT */
+  .contact-band{
+    background:var(--ink);
+    color:var(--paper);
+    padding:70px 0;
+    border-bottom:none;
+  }
+  .contact-band h2{
+    font-size:clamp(34px,6vw,64px);
+    margin:0 0 20px;
+  }
+  .contact-band p{
+    font-size:17px; max-width:520px; line-height:1.6; margin:0 0 30px; color:#d9d3c2;
+  }
+  .contact-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .contact-band .btn.outline{border-color:var(--paper);}
+  .contact-band .btn.outline:hover{background:var(--paper); color:var(--ink);}
+  .contact-band .btn.solid{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+  .contact-band .btn.solid:hover{background:var(--paper); border-color:var(--paper);}
+
+  footer{
+    padding:22px 0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:#6b6b62;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  @media (max-width: 760px){
+    .navbar nav{display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .platform-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="navbar">
+    <div class="mark">MvD</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#platform">Priorities</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap" style="border-bottom:none; padding-bottom:0;">
+  <div class="eyebrow mono">National Chair · High School Democrats of America</div>
+  <h1 class="display">MILAN<br><span>VAN DAM</span></h1>
+  <div class="role">Organizer &middot; Youth Political Leader &middot; Montgomery County, MD</div>
+  <p class="tagline">Building the next generation of Democratic organizers — one chapter, one Summit, one election tabulation at a time. <em>(Draft tagline — swap in your own line.)</em></p>
+  <div class="cta-row">
+    <a class="btn solid" href="#contact">Get in touch</a>
+    <a class="btn outline" href="#experience">See the work</a>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>NATIONAL CHAIR</span>
+    <span>HIGH SCHOOL DEMOCRATS OF AMERICA</span>
+    <span>ORGANIZE. EDUCATE. ELECT.</span>
+    <span>NATIONAL CHAIR</span>
+    <span>HIGH SCHOOL DEMOCRATS OF AMERICA</span>
+    <span>ORGANIZE. EDUCATE. ELECT.</span>
+  </div>
+</div>
+
+<section id="about" class="wrap">
+  <div class="section-head">
+    <span class="num mono">01</span>
+    <h2>About</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>Milan van Dam serves as National Chair of High School Democrats of America, the country's largest youth-led Democratic organization, where he leads chapters, elected leadership, and national programming for high schoolers organizing in their communities. <em>(Draft bio — replace with your own background, why you got involved, and what drives your organizing.)</em></p>
+      <p>Milan's work spans national governance and on-the-ground logistics: running the organization's leadership elections, shaping its bylaws and platform, and building the infrastructure — from Summit programming to fundraising — that keeps a national student organization running. <em>(Add specifics: hometown, school, how you first got involved in HSDA.)</em></p>
+      <p class="note">Note to editor: replace italicized lines with real biographical detail before publishing.</p>
+    </div>
+    <div>
+      <div class="stat-card">
+        <div class="num">50</div>
+        <div class="lbl">State chapters organized nationwide</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">1</div>
+        <div class="lbl">National Summit led, Georgetown University</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">RCV</div>
+        <div class="lbl">Ranked-choice elections overseen</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <div class="section-head">
+    <span class="num mono">02</span>
+    <h2>Experience</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="yr">Current</span>
+      <h3>National Chair — High School Democrats of America</h3>
+      <p>Leads national leadership and operations: overseeing ranked-choice elections for national office, guiding bylaw amendments, directing fundraising, and setting platform priorities across chapters nationwide.</p>
+    </div>
+    <div class="tl-item">
+      <span class="yr">Prior</span>
+      <h3>National Summit — Georgetown University</h3>
+      <p>Directed Summit logistics for delegates nationwide, including transportation, housing assignments, Capitol Hill visit routing, merchandise, and panel programming.</p>
+    </div>
+    <div class="tl-item">
+      <span class="yr">Prior</span>
+      <h3>Local &amp; State Organizing — Montgomery County, MD</h3>
+      <p><em>(Draft placeholder — add your earlier chapter or club leadership roles here.)</em></p>
+    </div>
+  </div>
+</section>
+
+<section id="platform" class="wrap">
+  <div class="section-head">
+    <span class="num mono">03</span>
+    <h2>Priorities</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="platform-grid">
+    <div class="plank">
+      <span class="mono">Growth</span>
+      <h3>Chapter expansion</h3>
+      <p>Grow HSDA's footprint into every state and congressional district, with a chapter-starter toolkit for students organizing from scratch.</p>
+    </div>
+    <div class="plank">
+      <span class="mono">Civics</span>
+      <h3>Civic education</h3>
+      <p>Equip chapters with training on how campaigns, elections, and local government actually work — beyond the textbook.</p>
+    </div>
+    <div class="plank">
+      <span class="mono">Turnout</span>
+      <h3>Youth voter registration</h3>
+      <p>Push pre-registration and first-time voter drives at every Summit and chapter event ahead of the next election cycle.</p>
+    </div>
+    <div class="plank">
+      <span class="mono">Pipeline</span>
+      <h3>Leadership pipeline</h3>
+      <p>Build a clear path from chapter member to state leadership to national office, with mentorship at every step.</p>
+    </div>
+  </div>
+  <p class="note" style="margin-top:22px; font-style:italic; color:#5b5b52;">Draft platform — edit these four planks to reflect your actual priorities as Chair.</p>
+</section>
+
+<section id="contact" class="contact-band" style="border-bottom:none;">
+  <div class="wrap">
+    <h2 class="display">Let's<br>Organize.</h2>
+    <p>For press, chapter partnerships, or speaking requests — reach out directly. <em>(Swap in your real email and socials below.)</em></p>
+    <div class="contact-links">
+      <a class="btn solid" href="mailto:milan@example.org">Email</a>
+      <a class="btn outline" href="#">Instagram</a>
+      <a class="btn outline" href="#">X / Twitter</a>
+      <a class="btn outline" href="#">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>&copy; 2026 Milan van Dam</span>
+  <span>High School Democrats of America · National Chair</span>
+</footer>
+
+</body>
+</html>

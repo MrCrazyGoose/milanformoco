@@ -1,619 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Milan Alexander van Dam | Democratic Central Committee · District 15</title>
-  <meta name="description" content="Milan Alexander van Dam for Montgomery County Democratic Central Committee (District 15). Fight Trump. Organize Year-Round. Work for YOU." />
-  <link rel="icon" type="image/x-icon" href="index.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milan van Dam — Democratic Organizer</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D;
+    --paper:#F3EFE6;
+    --paper-dim:#EAE4D4;
+    --gold:#E8A33D;
+    --blue:#1F3A5F;
+    --brick:#B23A2E;
+    --line: rgba(22,24,29,0.15);
+    --max: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:'Anton', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    line-height:0.92;
+  }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper);
+    border-bottom:2px solid var(--ink);
+  }
+  .navbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .navbar .brand{display:flex; align-items:center; gap:12px;}
+  .navbar .brand img{
+    width:38px; height:38px; border-radius:50%;
+    object-fit:cover; border:2px solid var(--ink);
+  }
+  .navbar .mark{
+    font-family:'Anton', sans-serif;
+    font-size:18px;
+    letter-spacing:0.02em;
+  }
+  .navbar nav{display:flex; gap:26px; align-items:center;}
+  .navbar nav a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .15s ease;
+  }
+  .navbar nav a:hover{border-color:var(--brick);}
+  .navbar nav a.btn-nav{
+    border:2px solid var(--ink); padding:8px 14px; border-bottom:2px solid var(--ink);
+  }
+  .navbar nav a.btn-nav:hover{background:var(--ink); color:var(--paper);}
 
-  <style>
-    :root {
-      --ink:     #0d0d0d;
-      --ink2:    #2a2a2a;
-      --muted:   #5c5c5c;
-      --rule:    rgba(0,0,0,.12);
-      --bg:      #f5f2ec;
-      --cream:   #faf8f4;
-      --red:     #c0392b;
-      --red2:    #9b1c0e;
-      --gold:    #b8860b;
-      --gold-lt: #f0c84a;
-      --white:   #ffffff;
-      --navy:    #0d1f3c;
-      --navy2:   #162a50;
-      --r:       4px;
-      --t:       .2s ease;
-    }
+  .hero{
+    border-bottom:2px solid var(--ink);
+  }
+  .hero-photo{
+    position:relative;
+    width:100%;
+    height:min(66vh, 620px);
+    min-height:380px;
+    overflow:hidden;
+    border-bottom:2px solid var(--ink);
+    background:#3a3a35;
+  }
+  .hero-photo img{
+    width:100%; height:100%; object-fit:cover;
+    object-position:center 22%;
+    filter:grayscale(15%) contrast(1.05);
+  }
+  .hero-photo .scrim{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(22,24,29,0.05) 0%, rgba(22,24,29,0.15) 45%, rgba(22,24,29,0.88) 100%);
+  }
+  .hero-photo .hero-text{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:0 28px 34px;
+    max-width:var(--max); margin:0 auto;
+    color:var(--paper);
+  }
+  .hero-photo .eyebrow{
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;
+    background:var(--gold);
+    display:inline-block; border-radius:50%;
+  }
+  .hero-photo h1{
+    font-size:clamp(38px, 8vw, 92px);
+    margin:0 0 6px;
+    color:var(--paper);
+  }
+  .hero-photo h1 span{color:var(--gold);}
+  .hero-photo .role{
+    font-size:clamp(14px,2vw,18px);
+    font-family:'IBM Plex Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin:8px 0 0;
+    color:var(--paper);
+  }
+  .hero-body{
+    padding:36px 0 40px;
+  }
+  .hero-body .tagline{
+    max-width:640px;
+    font-size:18px;
+    line-height:1.55;
+    margin:0 0 30px;
+  }
+  .hero-body .tagline strong{color:var(--brick);}
+  .hero-body .cta-row{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:36px;}
+  .btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    padding:14px 22px;
+    text-decoration:none;
+    display:inline-block;
+    border:2px solid var(--ink);
+    transition:transform .12s ease, background .12s ease, color .12s ease;
+    cursor:pointer;
+  }
+  .btn.solid{background:var(--ink); color:var(--paper);}
+  .btn.solid:hover{background:var(--brick); border-color:var(--brick); transform:translateY(-2px);}
+  .btn.outline:hover{background:var(--ink); color:var(--paper); transform:translateY(-2px);}
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: inherit; text-decoration: none; }
-    a, button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+  .hero-gallery{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:8px;
+    border:2px solid var(--ink);
+    padding:8px;
+    background:var(--paper-dim);
+  }
+  .hero-gallery img{
+    width:100%; height:130px; object-fit:cover;
+    border:1px solid var(--ink);
+    background:#d8d2c0;
+  }
+  .hero-gallery-label{
+    font-size:11px; margin-bottom:10px; color:var(--brick);
+  }
 
-    /* TICKER */
-    .ticker { background: var(--navy); color: rgba(255,255,255,.9); font-size: .72rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; padding: 9px 0; overflow: hidden; border-bottom: 2px solid var(--red); }
-    .ticker-inner { display: flex; align-items: center; white-space: nowrap; animation: tickerScroll 28s linear infinite; width: max-content; }
-    .ticker-inner:hover { animation-play-state: paused; }
-    .ticker-sep { display: inline-block; margin: 0 28px; color: var(--gold-lt); font-size: .9rem; }
-    @keyframes tickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.96) 100%);
+    border-top:2px solid rgba(255,255,255,0.04);
+    border-bottom:2px solid rgba(255,255,255,0.04);
+    padding:0;
+  }
+  .marquee::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-2px;
+    height:10px;
+    background:linear-gradient(180deg, #b5bac1 0%, #7c8389 100%);
+    border-top:2px solid rgba(0,0,0,0.7);
+    box-shadow:0 0 0 1px rgba(255,255,255,0.08);
+  }
+  .marquee-track{
+    display:flex;
+    align-items:flex-end;
+    gap:14px;
+    width:max-content;
+    animation:scroll-right 22s linear infinite;
+    padding:0;
+    transform:translateY(6px);
+  }
+  .train-set{
+    display:flex;
+    align-items:flex-end;
+    gap:10px;
+    width:max-content;
+    padding-left:12px;
+  }
+  .marquee-car{
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    width:180px; height:52px;
+    background:linear-gradient(180deg, #f7f5f1 0%, #dfe4e2 100%);
+    border:4px solid #11151a;
+    clip-path:polygon(0 18%, 8% 0, 92% 0, 100% 18%, 100% 100%, 0 100%);
+    box-shadow:inset 0 0 0 3px rgba(255,255,255,0.28), inset -8px -8px 0 rgba(17,21,26,0.06);
+    image-rendering:pixelated;
+    overflow:visible;
+  }
+  .marquee-car::before{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:-1px;
+    height:12px;
+    border-top:3px solid #11151a;
+    background:linear-gradient(180deg, #e54a3a 0%, #b21f1f 100%);
+  }
+  .marquee-car.alt-1::before{background:linear-gradient(180deg, #e54a3a 0%, #b21f1f 100%);}
+  .marquee-car.alt-2::before{background:linear-gradient(180deg, #2d8cff 0%, #1557b8 100%);}
+  .marquee-car.alt-3::before{background:linear-gradient(180deg, #f4aa3d 0%, #d66a1f 100%);}
+  .marquee-car.alt-4::before{background:linear-gradient(180deg, #f7d768 0%, #d9a622 100%);}
+  .marquee-car.alt-5::before{background:linear-gradient(180deg, #4cc964 0%, #2b9245 100%);}
+  .marquee-car.alt-6::before{background:linear-gradient(180deg, #d9dfe6 0%, #8a939d 100%);}
+  .marquee-car.alt-7::before{background:linear-gradient(180deg, #b68cf7 0%, #7142bf 100%);}
+  .marquee-car .wheel{
+    position:absolute;
+    bottom:-5px;
+    width:20px; height:20px;
+    background:#11151a;
+    border:4px solid #dfe7eb;
+    box-shadow:0 0 0 2px #11151a, inset 0 0 0 3px rgba(255,255,255,0.15);
+    z-index:2;
+    border-radius:50%;
+    overflow:visible;
+    display:block;
+  }
+  .marquee-car .wheel.left{left:18px;}
+  .marquee-car .wheel.right{right:18px;}
+  .marquee-text{
+    position:relative; z-index:1;
+    display:block;
+    transform:translateY(-5px);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+    text-align:center; line-height:1.1;
+    color:#11151a;
+    white-space:nowrap;
+    text-shadow:1px 1px 0 rgba(255,255,255,0.22);
+    padding:0 12px;
+  }
+  .marquee-car.engine{
+    width:204px;
+    background:linear-gradient(180deg, #f7f5f1 0%, #dfe4e2 100%);
+  }
+  .marquee-car.engine .lamp{
+    display:none;
+  }
+  @keyframes scroll-right{
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  @media (prefers-reduced-motion: reduce){.marquee-track{animation:none;}}
 
-    /* HEADER */
-    header { position: sticky; top: 0; z-index: 900; background: var(--cream); border-bottom: 1px solid var(--rule); box-shadow: 0 1px 0 var(--rule), 0 4px 20px rgba(0,0,0,.06); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 28px; gap: 20px; }
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .brand img { height: 50px; width: auto; }
-    .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-    .brand-name { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 1.25rem; color: var(--navy); letter-spacing: -.01em; }
-    .brand-sub { font-size: .66rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
-    .nav-links { display: flex; gap: 28px; align-items: center; list-style: none; }
-    .nav-links a { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); position: relative; padding-bottom: 3px; transition: color var(--t); }
-    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--red); transition: width var(--t); }
-    .nav-links a:hover { color: var(--red); }
-    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-    .nav-links a.active { color: var(--red); }
-    .nav-actions { display: flex; gap: 10px; align-items: center; }
+  section{padding:60px 0; border-bottom:0px solid var(--line);}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:32px;}
+  .section-head .num{font-family:'IBM Plex Mono', monospace; color:var(--brick); font-size:13px;}
+  .section-head h2{font-size:clamp(24px,4vw,36px); margin:0;}
+  .section-head .rule{flex:1; height:2px; background:var(--line);}
 
-    /* BUTTONS */
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 20px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; border: 2px solid transparent; border-radius: var(--r); cursor: pointer; transition: background var(--t), color var(--t), border-color var(--t), transform var(--t), box-shadow var(--t); white-space: nowrap; }
-    .btn-ghost { background: transparent; border-color: var(--ink); color: var(--ink); }
-    .btn-ghost:hover { background: var(--ink); color: var(--white); }
-    .btn-primary { background: var(--red); color: var(--white); border-color: var(--red); box-shadow: 0 4px 16px rgba(192,57,43,.35); }
-    .btn-primary:hover { background: var(--red2); border-color: var(--red2); transform: translateY(-1px); }
-    .btn-outline-white { background: transparent; border-color: rgba(255,255,255,.6); color: var(--white); }
-    .btn-outline-white:hover { background: var(--white); color: var(--navy); }
-    .btn-white { background: var(--white); color: var(--navy); border-color: var(--white); }
-    .btn-white:hover { background: var(--gold-lt); border-color: var(--gold-lt); }
+  .about-grid{display:grid; grid-template-columns: 1.3fr 0.9fr; gap:44px; align-items:start;}
+  .about-grid p{font-size:17px; line-height:1.7; margin:0 0 16px;}
+  .pillars{border:2px ssolid var(--ink); background:var(--paper-dim);}
+  .pillar{padding:18px 20px; border-bottom:2px solid var(--ink);}
+  .pillar:last-child{border-bottom:none;}
+  .pillar .mono{font-size:11px; color:var(--brick); display:block; margin-bottom:6px;}
+  .pillar h3{font-size:17px; margin:0 0 6px;}
+  .pillar p{font-size:14px; line-height:1.55; margin:0; color:#2c2c28;}
 
-    /* BURGER */
-    .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; margin: -10px; background: none; border: none; }
-    .burger span { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; }
+  .timeline{border-left:2px solid var(--ink); margin-left:6px;}
+  .tl-item{position:relative; padding:0 0 34px 34px;}
+  .tl-item:last-child{padding-bottom:4px;}
+  .tl-item::before{
+    content:""; position:absolute; left:-9px; top:2px;
+    width:16px; height:16px; background:var(--gold);
+    border:2px solid var(--ink); border-radius:50%;
+  }
+  .tl-item .yr{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    letter-spacing:0.1em; color:var(--brick); margin-bottom:6px; display:block;
+  }
+  .tl-item h3{font-size:20px; margin:0 0 4px;}
+  .tl-item .org{
+    font-family:'IBM Plex Mono', monospace; font-size:12px;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--blue); margin-bottom:6px;
+  }
+  #expExtra{display:none;}
+  #expToggle{margin-top:8px; margin-left:0;}
 
-    /* MOBILE MENU */
-    .mobile-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--cream); border-top: 1px solid var(--rule); border-bottom: 3px solid var(--red); box-shadow: 0 8px 20px rgba(0,0,0,.1); z-index: 10; }
-    .mobile-menu a { font-size: .82rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink2); padding: 14px 28px; border-bottom: 1px solid var(--rule); display: block; }
-    .mobile-menu .btn { margin: 12px 28px 16px; justify-content: center; border-bottom: none; padding: 10px 20px; }
+  .skills-wrap{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px;}
+  .skill-pill{
+    font-family:'IBM Plex Mono', monospace; font-size:11px;
+    text-transform:uppercase; letter-spacing:0.06em;
+    border:2px solid var(--ink); padding:8px 14px; background:var(--paper-dim);
+  }
 
-    /* HERO */
-    .hero { background: linear-gradient(rgba(13,31,60,.62), rgba(13,31,60,.62)), url('index1.png') 70% center/cover no-repeat; color: var(--white); position: relative; }
-    .hero-accent-bar { height: 5px; background: linear-gradient(90deg, var(--red) 0%, var(--gold-lt) 100%); }
-    .hero-inner { min-height: 560px; position: relative; z-index: 2; display: flex; align-items: center; }
-    .hero-left { padding: 72px 0; max-width: 640px; }
-    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .72rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 18px; }
-    .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 2px; background: var(--gold-lt); flex-shrink: 0; }
-    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(3rem, 5vw + 1rem, 5.2rem); font-weight: 900; line-height: .95; letter-spacing: -.02em; color: var(--white); text-transform: uppercase; }
-    .hero h1 em { font-style: italic; color: var(--gold-lt); }
-    .hero-rule { margin: 22px 0; width: 56px; height: 3px; background: var(--red); }
-    .hero-office { font-size: .78rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 16px; }
-    .hero-desc { font-size: 1.05rem; color: rgba(255,255,255,.88); max-width: 540px; line-height: 1.7; }
-    .hero-desc strong { color: var(--white); font-weight: 700; }
-    .hero-chips { margin-top: 32px; display: flex; gap: 8px; flex-wrap: wrap; }
-    .chip { font-size: .7rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; border: 1px solid rgba(255,255,255,.22); color: rgba(255,255,255,.75); }
-    .hero-cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .hero-countdown { background: rgba(13,31,60,.88); border-top: 2px solid var(--red); padding: 16px 28px; }
-    .countdown-label { font-size: .64rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 4px; }
-    .countdown-time { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--gold-lt); letter-spacing: .06em; }
+  .contact-band{background:var(--ink); color:var(--paper); padding:64px 0; border-bottom:none;}
+  .contact-band h2{font-size:clamp(32px,6vw,58px); margin:0 0 18px;}
+  .contact-band p{font-size:16px; max-width:520px; line-height:1.6; margin:0 0 26px; color:#d9d3c2;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  .contact-direct{font-family:'IBM Plex Mono', monospace; font-size:14px; line-height:2; margin-bottom:20px;}
+  .contact-direct a{border-bottom:1px solid var(--gold); text-decoration:none;}
+  .contact-links{display:flex; gap:14px; flex-wrap:wrap;}
+  .contact-band .btn.outline{border-color:var(--paper);}
+  .contact-band .btn.outline:hover{background:var(--paper); color:var(--ink);}
+  .contact-band .btn.solid{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+  .contact-band .btn.solid:hover{background:var(--paper); border-color:var(--paper);}
 
-    /* RED RULE */
-    .rule-section { background: var(--red); color: var(--white); padding: 14px 0; }
-    .rule-inner { display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
-    .rule-item { font-size: .74rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
-    .rule-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.5); }
+  .field-group{margin-bottom:14px;}
+  .field-group label{
+    display:block; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase; margin-bottom:6px; color:#d9d3c2;
+  }
+  .field-group input, .field-group textarea{
+    width:100%; padding:12px 14px; background:rgba(243,239,230,0.06);
+    border:2px solid rgba(243,239,230,0.35); color:var(--paper);
+    font-family:'Source Serif 4', serif; font-size:15px; outline:none;
+  }
+  .field-group input:focus, .field-group textarea:focus{border-color:var(--gold);}
+  .field-group textarea{min-height:100px; resize:vertical;}
+  #contactSuccess{display:none; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold); margin-top:10px;}
 
-    /* SECTIONS */
-    section { padding: 80px 0; }
-    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; color: var(--red); display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .eyebrow::before { content: ''; display: block; width: 22px; height: 2px; background: var(--red); flex-shrink: 0; }
-    .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3vw + .5rem, 2.8rem); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; color: var(--navy); }
-    .section-title em { font-style: italic; color: var(--red); }
-    .section-lede { margin-top: 12px; color: var(--muted); font-size: .98rem; max-width: 640px; line-height: 1.75; }
+  footer{
+    padding:20px 0; font-family:'IBM Plex Mono', monospace; font-size:11px;
+    letter-spacing:0.08em; text-transform:uppercase; color:#6b6b62;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
 
-    /* ABOUT */
-    #about { background: var(--cream); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-    .about-body p { color: var(--ink2); font-size: .98rem; line-height: 1.78; margin-top: 16px; }
-    .about-body p:first-of-type { margin-top: 0; }
-    .pullquote { margin: 32px 0; padding: 24px 28px; border-left: 4px solid var(--red); background: var(--white); box-shadow: 0 2px 14px rgba(0,0,0,.07); }
-    .pullquote p { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-style: italic; color: var(--navy); line-height: 1.55; font-weight: 700; margin-top: 0 !important; }
-    .pullquote cite { display: block; margin-top: 10px; font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-style: normal; }
-    .about-sidebar { display: flex; flex-direction: column; gap: 16px; }
-    .info-card { background: var(--white); border: 1px solid var(--rule); border-top: 3px solid var(--navy); padding: 22px 24px; box-shadow: 0 2px 12px rgba(0,0,0,.05); }
-    .info-card .k { font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
-    .info-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
-    .link-row { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--bg); margin-top: 8px; font-size: .86rem; font-weight: 500; color: var(--navy); border: 1px solid var(--rule); transition: background var(--t), border-color var(--t); cursor: pointer; }
-    .link-row:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .link-row .arrow { margin-left: auto; font-size: .8rem; opacity: .5; }
-
-    /* PLAN */
-    #plan { background: var(--bg); }
-    .plan-grid { display: grid; grid-template-columns: 260px 1fr; gap: 40px; margin-top: 40px; align-items: start; }
-    .plan-nav { position: sticky; top: 90px; }
-    .plan-nav-label { font-size: .68rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
-    .plan-nav-item { display: block; width: 100%; padding: 12px 14px; font-size: .82rem; font-weight: 600; color: var(--muted); border-left: 3px solid transparent; border-top: none; border-right: none; border-bottom: none; background: transparent; text-align: left; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all var(--t); min-height: 44px; }
-    .plan-nav-item:hover { color: var(--navy); background: rgba(0,0,0,.04); }
-    .plan-nav-item.active { color: var(--navy); border-left-color: var(--red); background: var(--white); font-weight: 700; }
-    .plan-panels { display: flex; flex-direction: column; gap: 3px; }
-    .plan-panel { background: var(--white); border: 1px solid var(--rule); border-left: 4px solid var(--navy); overflow: hidden; transition: border-color var(--t); }
-    .plan-panel.open { border-left-color: var(--red); }
-    .plan-header { display: flex; align-items: center; gap: 16px; padding: 20px 22px; cursor: pointer; user-select: none; min-height: 44px; width: 100%; background: none; border: none; text-align: left; font-family: inherit; }
-    .plan-icon { width: 40px; height: 40px; border-radius: var(--r); background: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--white); transition: background var(--t); pointer-events: none; }
-    .plan-panel.open .plan-icon { background: var(--red); }
-    .plan-title-block { flex: 1; pointer-events: none; }
-    .plan-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
-    .plan-sub { font-size: .82rem; color: var(--muted); margin-top: 3px; }
-    .plan-chev { width: 10px; height: 10px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform var(--t); flex-shrink: 0; margin-right: 4px; pointer-events: none; }
-    .plan-panel.open .plan-chev { transform: rotate(225deg); }
-    .plan-body { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; padding: 0 22px 0 78px; }
-    .plan-panel.open .plan-body { max-height: 600px; padding: 4px 22px 22px 78px; }
-    .plan-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .plan-body li { font-size: .92rem; color: var(--ink2); line-height: 1.7; padding-left: 18px; position: relative; }
-    .plan-body li::before { content: '—'; color: var(--red); font-weight: 700; position: absolute; left: 0; top: 0; }
-
-    /* VOTE BANNER */
-    .vote-banner { background: var(--navy); color: var(--white); padding: 56px 0; position: relative; overflow: hidden; }
-    .vote-inner { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-    .vote-left .tag { font-size: .7rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 10px; }
-    .vote-left h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw + .4rem, 2.6rem); font-weight: 900; line-height: 1.05; }
-    .vote-left h2 em { font-style: italic; color: var(--gold-lt); }
-    .vote-dates { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
-    .vote-date-item { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); padding: 14px 18px; }
-    .vote-date-item .d-label { font-size: .64rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 4px; }
-    .vote-date-item .d-val { font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 800; color: var(--white); }
-    .vote-right { text-align: right; }
-    .vote-right p { font-size: .92rem; color: rgba(255,255,255,.7); margin-bottom: 18px; max-width: 320px; }
-
-    /* CONTACT */
-    #get-involved { background: var(--cream); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; align-items: start; }
-    .contact-info { display: flex; flex-direction: column; gap: 14px; }
-    .contact-card { background: var(--white); border: 1px solid var(--rule); padding: 20px 22px; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
-    .contact-card .c-label { font-size: .66rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
-    .c-link { display: flex; align-items: center; gap: 12px; padding: 11px 14px; font-size: .9rem; font-weight: 500; color: var(--navy); border: 1px solid var(--rule); margin-top: 8px; transition: background var(--t), border-color var(--t), color var(--t); }
-    .c-link:first-of-type { margin-top: 0; }
-    .c-link:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-    .c-link b { font-weight: 700; }
-    .c-link .c-arrow { margin-left: auto; opacity: .4; font-size: .8rem; }
-    .promise { background: var(--navy); color: var(--white); padding: 18px 22px; margin-top: 4px; }
-    .promise p { font-size: .86rem; line-height: 1.65; color: rgba(255,255,255,.82); }
-    .promise strong { color: var(--gold-lt); }
-    .form-panel { background: var(--white); border: 1px solid var(--rule); padding: 28px; box-shadow: 0 2px 14px rgba(0,0,0,.06); }
-    .form-panel .f-title { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
-    .form-panel .f-sub { font-size: .82rem; color: var(--muted); margin-bottom: 20px; }
-    .form-panel iframe { width: 100%; border: none; display: block; }
-
-    /* FOOTER */
-    footer { background: var(--ink); color: rgba(255,255,255,.55); }
-    .footer-top { border-bottom: 1px solid rgba(255,255,255,.08); padding: 36px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-brand { font-family: 'Playfair Display', Georgia, serif; font-size: 1.1rem; font-weight: 900; color: var(--white); }
-    .footer-brand span { display: block; font-family: 'DM Sans', sans-serif; font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 4px; }
-    .footer-links { display: flex; gap: 8px; flex-wrap: wrap; }
-    .footer-badge { font-size: .68rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; padding: 6px 12px; border: 1px solid rgba(255,255,255,.14); color: rgba(255,255,255,.6); }
-    .footer-bottom { padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .74rem; }
-
-    /* FLOATING CTA */
-    .fab { position: fixed; right: 20px; bottom: 20px; z-index: 800; background: var(--navy); color: var(--white); border: 1px solid rgba(255,255,255,.15); box-shadow: 0 12px 40px rgba(0,0,0,.4); display: flex; align-items: center; gap: 14px; padding: 12px 14px; }
-    .fab-text .f-date { font-size: .62rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-lt); }
-    .fab-text .f-action { font-size: .82rem; font-weight: 700; color: var(--white); }
-    .fab-close { width: 26px; height: 26px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); color: rgba(255,255,255,.6); cursor: pointer; font-size: .9rem; display: flex; align-items: center; justify-content: center; }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-left { padding: 56px 0 40px; }
-      .about-grid { grid-template-columns: 1fr; gap: 36px; }
-      .plan-grid { grid-template-columns: 1fr; }
-      .plan-nav { position: static; display: flex; gap: 6px; flex-wrap: wrap; }
-      .plan-nav-label { display: none; }
-      .plan-nav-item { border-left: none; border-bottom: 3px solid transparent; padding: 8px 12px; width: auto; }
-      .plan-nav-item.active { border-left: none; border-bottom-color: var(--red); }
-      .contact-grid { grid-template-columns: 1fr; }
-      .vote-inner { flex-direction: column; }
-      .vote-right { text-align: left; }
-    }
-    @media (max-width: 700px) {
-      .nav-links, .nav-actions { display: none; }
-      .burger { display: flex; }
-      .hero-left { padding: 40px 0 32px; }
-      .hero-chips { display: none; }
-    }
-    @media (max-width: 500px) {
-      .container { padding: 0 18px; }
-      section { padding: 56px 0; }
-    }
-  </style>
+  @media (max-width: 760px){
+    .navbar nav{gap:14px;}
+    .navbar nav a:not(.btn-nav){display:none;}
+    .about-grid{grid-template-columns:1fr;}
+    .hero-gallery{grid-template-columns:repeat(2,1fr);}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+</style>
 </head>
 <body>
 
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker-inner">
-      Vote June 23, 2026 <span class="ticker-sep">★</span>
-      Early Voting: June 11–18 <span class="ticker-sep">★</span>
-      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
-      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
-      Real Action. Bold Change. <span class="ticker-sep">★</span>
-      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
-      District 15 · Montgomery County <span class="ticker-sep">★</span>
-      Vote June 23, 2026 <span class="ticker-sep">★</span>
-      Early Voting: June 11–18 <span class="ticker-sep">★</span>
-      Poolesville &nbsp;·&nbsp; Barnesville &nbsp;·&nbsp; Clarksburg <span class="ticker-sep">★</span>
-      Germantown &nbsp;·&nbsp; North Potomac &nbsp;·&nbsp; Travilah <span class="ticker-sep">★</span>
-      Real Action. Bold Change. <span class="ticker-sep">★</span>
-      Organize Everywhere, Year-Round <span class="ticker-sep">★</span>
-      District 15 · Montgomery County <span class="ticker-sep">★</span>
+<header class="site">
+  <div class="navbar">
+    <div class="brand">
+      <div class="mark">Milan van Dam</div>
     </div>
-  </div>
-
-  <!-- HEADER -->
-  <header id="site-header">
-    <div class="nav">
-      <div class="brand">
-        <div class="brand-text">
-          <div class="brand-name">Milan van Dam</div>
-          <div class="brand-sub">MCDCC · District 15</div>
-        </div>
-      </div>
-      <ul class="nav-links">
-        <li><a href="#home" data-section="home">Home</a></li>
-        <li><a href="#about" data-section="about">About</a></li>
-        <li><a href="#plan" data-section="plan">Platform</a></li>
-        <li><a href="#get-involved" data-section="get-involved">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <a class="btn btn-ghost" href="joinus.html">Join the Campaign</a>
-        <a class="btn btn-primary" href="https://secure.actblue.com/donate/milanformoco">Donate</a>
-      </div>
-      <button class="burger" id="burger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
+    <nav>
       <a href="#about">About</a>
-      <a href="#plan">Platform</a>
-      <a href="#get-involved">Contact</a>
-      <a class="btn btn-primary" href="joinus.html">Join the Campaign</a>
-      <a class="btn btn-primary" href="https://secure.actblue.com/donate/milanformoco">Donate</a>
-    </div>
-  </header>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-nav" href="https://www.hsdems.org/donate" target="_blank" rel="noopener">Donate to HSDA</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="container">
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-eyebrow">Montgomery County · District 15</div>
-          <h1>Milan<br><em>van Dam</em></h1>
-          <div class="hero-rule"></div>
-          <div class="hero-office">Democratic Central Committee · 2026</div>
-          <p class="hero-desc">Child of immigrants. Community activist. Democratic organizer. Fighting for a party that <strong>organizes year-round</strong>, <strong>stands up to Trump &amp; MAGA</strong>, and <strong>works for working people</strong> — not special interests.</p>
-          <div class="hero-chips">
-            <div class="chip">Organizer</div>
-            <div class="chip">Community-first</div>
-            <div class="chip">Real vision</div>
-          </div>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="joinus.html">Join the Campaign</a>
-            <a class="btn btn-outline-white" href="#plan">Read the Platform</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="hero-countdown">
-      <div class="container">
-        <div class="countdown-label">Election Day · June 23, 2026 · Countdown</div>
-        <div class="countdown-time" id="countTime">Loading…</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RED RULE -->
-  <div class="rule-section">
-    <div class="container rule-inner">
-      <div class="rule-item"><div class="rule-dot"></div>Vote June 23, 2026</div>
-      <div class="rule-item"><div class="rule-dot"></div>Early Voting: June 11–18</div>
-      <div class="rule-item"><div class="rule-dot"></div>Real Action. Bold Change.</div>
-      <div class="rule-item"><div class="rule-dot"></div>Organize Everywhere</div>
+<section class="hero">
+  <div class="hero-photo">
+    <img src="hero.png" alt="Milan van Dam">
+    <div class="scrim"></div>
+    <div class="hero-text">
+      <div class="eyebrow mono">Chair, High School Democrats of America &middot; Executive Committee, DNC</div>
+      <h1 class="display">WE ARE THE<br><span>NEXT GENERATION</span><br>OF LEADERS</h1>
+      <div class="role">Democratic Organizer &middot; Montgomery County, MD</div>
     </div>
   </div>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="container">
-      <div class="eyebrow">About Milan</div>
-      <div class="about-grid">
-        <div class="about-body">
-          <div class="section-title">An organizer,<br><em>not a politician</em></div>
-          <p>I'm running for Democratic Central Committee in District 15 to build strong, year-round grassroots organizing infrastructure — and to stand up for our immigrant and marginalized communities against the Trump Administration.</p>
-          <p>As a child of immigrants, I know what it means to fight on the ground, not from a podium. I've helped run one of the largest nationwide grassroots Democratic organizations, organized campaigns and initiatives across Montgomery County and the state, and advocated for increased accessibility and accountability within the state party and the DNC.</p>
-          <div class="pullquote">
-            <p>"We all know these are not ordinary times. We need change, and a new generation of leadership to move the party forward and fight for our county."</p>
-            <cite>— Milan van Dam</cite>
-          </div>
-          <p>You deserve a party that works for you, and leaders that work as hard as you do.</p>
-        </div>
-        <div class="about-sidebar">
-          <div class="info-card">
-            <div class="k">Am I in District 15?</div>
-            <h4>Find your legislative district</h4>
-            <a class="link-row" href="https://mgaleg.maryland.gov/mgawebsite/Members/District#divQuery" target="_blank" rel="noreferrer">Check your district on the MGA website <span class="arrow">↗</span></a>
-          </div>
-          <div class="info-card">
-            <div class="k">Voter Resources</div>
-            <h4>Ready to vote in June?</h4>
-            <a class="link-row" href="https://www.montgomerycountymd.gov/elections/index2.html" target="_blank" rel="noreferrer">Montgomery County Elections Office <span class="arrow">↗</span></a>
-            <div style="margin-top:14px; font-size:.84rem; color:var(--muted); line-height:1.6;">
-              <strong style="color:var(--ink2);">Election Day:</strong> June 23, 2026<br>
-              <strong style="color:var(--ink2);">Early Voting:</strong> June 11–18, 2026
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="k">The Stakes</div>
-            <h4>Real action. Bold change.</h4>
-            <p style="font-size:.86rem; color:var(--muted); margin-top:8px; line-height:1.65;">In District 15 — from Poolesville to North Potomac — our communities need a party that shows up every day, not just at election time.</p>
-          </div>
-        </div>
-      </div>
+  <div class="hero-body wrap">
+    <p class="tagline">Let's build a party that <strong>works for everyone.</strong> There's no time to wait.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="#contact">Contact Me</a>
+      <a class="btn outline" href="#about">Get to Know Me</a>
     </div>
-  </section>
-
-  <!-- PLAN -->
-  <section id="plan">
-    <div class="container">
-      <div class="eyebrow">The Platform</div>
-      <div class="section-title">Fighting for a party that…</div>
-      <p class="section-lede">Four commitments. Real action. Built for this moment.</p>
-      <div class="plan-grid">
-        <div class="plan-nav">
-          <div class="plan-nav-label">Jump to pillar</div>
-          <button class="plan-nav-item active" data-target="p0">Organize everywhere</button>
-          <button class="plan-nav-item" data-target="p1">Stand up to MAGA</button>
-          <button class="plan-nav-item" data-target="p2">Work for the people</button>
-          <button class="plan-nav-item" data-target="p3">Defend our communities</button>
-        </div>
-        <div class="plan-panels">
-
-          <div class="plan-panel open" id="p0">
-            <button class="plan-header">
-              <div class="plan-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 11v2a2 2 0 0 0 2 2h2l5 4V7L7 11H5a2 2 0 0 0-2 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8.5c3.5 0 6-2 7-3v13c-1-1-3.5-3-7-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="plan-title-block"><div class="plan-title">Organizes Everywhere, Year-Round</div><div class="plan-sub">We cannot leave any community behind, any time unused.</div></div>
-              <div class="plan-chev"></div>
-            </button>
-            <div class="plan-body"><ul>
-              <li>Invest in <strong>year-round field work</strong> in District 15 and countywide, working with precinct leaders and clubs.</li>
-              <li>Prioritize <strong>precinct-level and club-based organizing</strong> and building strong volunteer pipelines.</li>
-              <li>Establish campaign <strong>training programs</strong>, organize midterm phonebanks and canvasses.</li>
-            </ul></div>
-          </div>
-
-          <div class="plan-panel" id="p1">
-            <button class="plan-header">
-              <div class="plan-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2 20 6v6c0 5-3.5 9.5-8 10-4.5-.5-8-5-8-10V6l8-4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="plan-title-block"><div class="plan-title">Stands Up to Trump &amp; MAGA</div><div class="plan-sub">Our communities are under attack. We have to fight back.</div></div>
-              <div class="plan-chev"></div>
-            </button>
-            <div class="plan-body"><ul>
-              <li>Build digital rapid response capacity and rebuild the central committee's social media presence.</li>
-              <li>Unite organizations, communities, and campaigns against Trump's actions.</li>
-              <li>Make the local party a force for action — from <strong>protests to phonebanks</strong>.</li>
-            </ul></div>
-          </div>
-
-          <div class="plan-panel" id="p2">
-            <button class="plan-header">
-              <div class="plan-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-              <div class="plan-title-block"><div class="plan-title">Builds a Party for the People</div><div class="plan-sub">More representative, focused on delivering real results.</div></div>
-              <div class="plan-chev"></div>
-            </button>
-            <div class="plan-body"><ul>
-              <li>Move towards <strong>special elections</strong> from the appointment system.</li>
-              <li>Host regular town halls, record meetings, and open a feedback form for the party.</li>
-              <li>Show up to local events and maintain regular communication with community leaders.</li>
-            </ul></div>
-          </div>
-
-          <div class="plan-panel" id="p3">
-            <button class="plan-header">
-              <div class="plan-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.5-7 10-7 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <div class="plan-title-block"><div class="plan-title">Defends Communities &amp; Rejects Hate</div><div class="plan-sub">A party that reflects our diversity and protects the vulnerable.</div></div>
-              <div class="plan-chev"></div>
-            </button>
-            <div class="plan-body"><ul>
-              <li>Stand up for immigrant communities with consistent advocacy and presence.</li>
-              <li>Reject <strong>antisemitism and hate</strong> clearly and consistently.</li>
-              <li>Work closely with clubs to ensure all voices are heard — including high school, college, and young Democrats.</li>
-            </ul></div>
-          </div>
-
-        </div>
-      </div>
+    <div class="hero-gallery-label mono">Organizing everywhere</div>
+    <div class="hero-gallery">
+      <img src="canvass.jpg" alt="Milan van Dam canvassing in Virginia">
+      <img src="wesmoore.png" alt="Milan at the MDP Gala with Governor Moore">
+      <img src="ken.jpg" alt="Milan with DNC Chair Ken Martin">
+      <img src="nokings.jpg" alt="Milan at a No Kings rally">
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- VOTE BANNER -->
-  <div class="vote-banner">
-    <div class="container">
-      <div class="vote-inner">
-        <div class="vote-left">
-          <div class="tag">Mark your calendar</div>
-          <h2>Make your<br><em>voice heard</em></h2>
-          <div class="vote-dates">
-            <div class="vote-date-item"><div class="d-label">Early Voting</div><div class="d-val">June 11–18</div></div>
-            <div class="vote-date-item"><div class="d-label">Election Day</div><div class="d-val">June 23, 2026</div></div>
-            <div class="vote-date-item"><div class="d-label">District</div><div class="d-val">Legislative D15</div></div>
-          </div>
-        </div>
-        <div class="vote-right">
-          <p>Not sure if you're registered or in District 15? Check your status before June arrives.</p>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;">
-            <a class="btn btn-white" href="https://mgaleg.maryland.gov/mgawebsite/Members/District#divQuery" target="_blank" rel="noreferrer">Check My District</a>
-            <a class="btn btn-outline-white" href="https://www.montgomerycountymd.gov/elections/index2.html" target="_blank" rel="noreferrer">Voter Info</a>
-          </div>
-        </div>
+<div class="marquee" aria-label="Train-themed movement ticker">
+  <div class="marquee-track">
+    <div class="train-set">
+      <div class="marquee-car engine alt-1"><span class="marquee-text">Organizing</span><span class="lamp"></span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-2"><span class="marquee-text">People</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-3"><span class="marquee-text">Build</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-4"><span class="marquee-text">Innovate</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-5"><span class="marquee-text">Change</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-6"><span class="marquee-text">Organizing</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-7"><span class="marquee-text">People</span><span class="wheel left"></span><span class="wheel right"></span></div>
+    </div>
+    <div class="train-set" aria-hidden="true">
+      <div class="marquee-car engine alt-1"><span class="marquee-text">Organizing</span><span class="lamp"></span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-2"><span class="marquee-text">People</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-3"><span class="marquee-text">Build</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-4"><span class="marquee-text">Innovate</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-5"><span class="marquee-text">Change</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-6"><span class="marquee-text">Organizing</span><span class="wheel left"></span><span class="wheel right"></span></div>
+      <div class="marquee-car alt-7"><span class="marquee-text">People</span><span class="wheel left"></span><span class="wheel right"></span></div>
+    </div>
+  </div>
+</div>
+<p></p>
+<section id="about" class="wrap">
+  <div class="section-head">
+    <span class="num mono">01</span>
+    <h2>About</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>I've spent nearly half my life organizing for Democrats and advocating for a new generation of leaders. I'll keep showing up, as we all must, to deliver real change for our communities.</p>
+      <p>My peers and I may be the next generation of voters, but we are this generation of organizers, advocates, and change-makers. That's why we're working across this country to build a better future for all.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="mono">Organizing</span>
+        <h3>Building people-first movements</h3>
+        <p>Organizing grassroots campaigns and building movements that prioritize the needs and voices of everyday working people.</p>
+      </div>
+      <div class="pillar">
+        <span class="mono">Representation</span>
+        <h3>Uplifting youth & marginalized voices</h3>
+        <p>Making sure youth and marginalized communities are heard in a political climate where far too are left out of the conversation.</p>
+      </div>
+      <div class="pillar">
+        <span class="mono">Advocacy</span>
+        <h3>Fighting for real change</h3>
+        <p>Pushing for legislation and policies that promote fairness and justice for all communities.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="get-involved">
-    <div class="container">
-      <div class="eyebrow">Get Involved</div>
-      <div class="section-title">Get in contact,<br><em>get involved</em></div>
-      <p class="section-lede">Want to help out, have a question, or just want to talk? We'll follow up within 24 hours — guaranteed.</p>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-card">
-            <div class="c-label">Reach us directly</div>
-            <a class="c-link" href="tel:240-660-1088"><b>Phone</b> — 240-660-1088 <span class="c-arrow">→</span></a>
-            <a class="c-link" href="mailto:milanformoco@gmail.com"><b>Email</b> — milanformoco@gmail.com <span class="c-arrow">→</span></a>
-            <a class="c-link" href="https://milanformoco.com" target="_blank" rel="noreferrer"><b>Website</b> — milanformoco.com <span class="c-arrow">↗</span></a>
-            <a class="c-link" href="https://instagram.com/milanformoco" target="_blank" rel="noreferrer"><b>Instagram / Facebook</b> — @milanformoco <span class="c-arrow">↗</span></a>
-          </div>
-          <div class="promise">
-            <p>We <strong>guarantee responses within 24 hours</strong>. We're also happy to set up a 1-on-1 call or an in-person meeting to discuss your priorities. We are working to earn your vote.</p>
-          </div>
-        </div>
-        <div class="form-panel">
-          <div class="f-title">Join the campaign!</div>
-          <div class="f-sub">Use the form below and we'll be in touch shortly.</div>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeQqZczHzEC6ta-oj567uoYGu5xI20CEa_SFRwP52TCMuyPzA/viewform?embedded=true" height="320" frameborder="0" marginheight="0" marginwidth="0" title="Contact Form">Loading…</iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">Milan van Dam<span>Democratic Central Committee · District 15 · 2026</span></div>
-        <div class="footer-links">
-          <div class="footer-badge">Vote June 23</div>
-          <div class="footer-badge">Early Voting Jun 11–18</div>
-          <div class="footer-badge">@milanformoco</div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>By Authority: Friends of Milan Van Dam; Ramachandra Mukunda, Treasurer.</div>
-        <div>Real Action. Bold Change. District 15.</div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- FLOATING CTA -->
-  <div class="fab" id="fab">
-    <div class="fab-text">
-      <div class="f-date">June 23 · District 15</div>
-      <div class="f-action">Join the Campaign</div>
-    </div>
-    <a class="btn btn-primary" href="joinus.html" style="padding:9px 14px; font-size:.7rem;">Sign Up</a>
-    <button class="fab-close" id="fabClose" aria-label="Dismiss">×</button>
+<section id="experience" class="wrap">
+  <div class="section-head">
+    <span class="num mono">02</span>
+    <h2>Experience</h2>
+    <div class="rule"></div>
   </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <span class="yr">Jul 2026 &ndash; Present</span>
+      <h3>Chairman</h3>
+      <div class="org">High School Democrats of America</div>
+    </div>
+    <div class="tl-item">
+      <span class="yr">Jul 2026 &ndash; Present</span>
+      <h3>DNC Member + Executive Committeeman</h3>
+      <div class="org">Democratic National Committee</div>
+    </div>
+    <div class="tl-item">
+      <span class="yr">Dec 2025 &ndash; Present</span>
+      <h3>Councilman At-Large (Eastern Region)</h3>
+      <div class="org">DNC Youth Council</div>
+    </div>
+    <div class="tl-item">
+      <span class="yr">Dec 2024 &ndash; Present</span>
+      <h3>Communications + Programs Director</h3>
+      <div class="org">Montgomery County Young Democrats</div>
+    </div>
+    <div id="expExtra">
+      <div class="tl-item">
+        <span class="yr">Jul 2025 &ndash; July 2026</span>
+        <h3>Vice Chairman</h3>
+      <div class="org">High School Democrats of America</div>
+    </div>
+      <div class="tl-item">
+        <span class="yr">Apr &ndash; Aug 2025</span>
+        <h3>Chairman</h3>
+        <div class="org">Maryland High School Democrats</div>
+      </div>
+      <div class="tl-item">
+      <span class="yr">Sep 2025 &ndash; June 2026</span>
+      <h3>Events / Rel. Organizing Dir.</h3>
+      <div class="org">Amar Mukunda for State Senate</div>
+    </div>
+      <div class="tl-item">
+        <span class="yr">Aug 2024 &ndash; Jul 2025</span>
+        <h3>Chairman</h3>
+        <div class="org">HSDA First-Generation Caucus</div>
+      </div>
+      <div class="tl-item">
+        <span class="yr">May 2025 &ndash; Present</span>
+        <h3>National Ambassador Program Director</h3>
+        <div class="org">VOTE Movement</div>
+      </div>
+      <div class="tl-item">
+        <span class="yr">May 2025 &ndash; Present</span>
+        <h3>Intern</h3>
+        <div class="org">UMBC Center for Democracy and Civic Life</div>
+      </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+      <div class="tl-item">
+        <span class="yr">Jun &ndash; Aug 2025</span>
+        <h3>Fellow</h3>
+        <div class="org">Raskin for Congress</div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn outline" id="expToggle">Show more roles</button>
 
-      // COUNTDOWN
-      var countTimeEl = document.getElementById('countTime');
-      if (countTimeEl) {
-        var ed = new Date("2026-06-23T06:00:00-04:00");
-        function tick() {
-          var diff = ed - new Date();
-          if (diff <= 0) { countTimeEl.textContent = "Election Day is here!"; return; }
-          var s = Math.floor(diff / 1000);
-          countTimeEl.textContent =
-            String(Math.floor(s/86400)).padStart(2,'0') + 'd  ' +
-            String(Math.floor((s%86400)/3600)).padStart(2,'0') + 'h  ' +
-            String(Math.floor((s%3600)/60)).padStart(2,'0') + 'm  ' +
-            String(s%60).padStart(2,'0') + 's';
-        }
-        tick(); setInterval(tick, 1000);
-      }
+  <div style="margin-top:44px;">
+    <span class="num mono" style="display:block; margin-bottom:14px;">Skills</span>
+    <div class="skills-wrap">
+      <span class="skill-pill">Action Network</span>
+      <span class="skill-pill">ScaleToWin</span>
+      <span class="skill-pill">NGP VAN/Votebuilder</span>
+      <span class="skill-pill">Content + Ad Creation</span>
+      <span class="skill-pill">ActBlue</span>
+      <span class="skill-pill">Adobe/Google/MS Suite</span>
+      <span class="skill-pill">Email + Digital Fundraising</span>
+      <span class="skill-pill">HTML, CSS, JavaScript, Python</span>
+    </div>
+  </div>
+  <p></p>
+</section>
 
-      // BURGER
-      var burger = document.getElementById('burger');
-      var mobileMenu = document.getElementById('mobileMenu');
-      if (burger && mobileMenu) {
-        burger.addEventListener('click', function() {
-          var open = mobileMenu.style.display === 'flex';
-          mobileMenu.style.display = open ? 'none' : 'flex';
-        });
-        mobileMenu.querySelectorAll('a').forEach(function(a) {
-          a.addEventListener('click', function() {
-            mobileMenu.style.display = 'none';
-          });
-        });
-      }
+<section id="contact" class="contact-band" style="border-bottom:none;">
+  <div class="wrap">
+    <h2 class="display">Let's<br>Connect.</h2>
+    <p>I'm always open to discussing new opportunities, collaborations, or just having a conversation. Reach out anytime!</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-direct">
+          <div><a href="mailto:milan@hsdems.org">milan@hsdems.org</a></div>
+          <div><a href="tel:2406601088">(240) 660-1088</a></div>
+        </div>
+        <div class="contact-links">
+          <a class="btn outline" href="https://www.instagram.com/milan.van.dam/" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn outline" href="https://www.linkedin.com/in/milan-van-dam-38979b289/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      // SCROLLSPY
-      var navLinks = {};
-      document.querySelectorAll('.nav-links a[data-section]').forEach(function(a) {
-        navLinks[a.getAttribute('data-section')] = a;
-      });
-      if (window.IntersectionObserver) {
-        new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) {
-            if (e.isIntersecting) {
-              Object.keys(navLinks).forEach(function(k) { navLinks[k].classList.remove('active'); });
-              if (navLinks[e.target.id]) navLinks[e.target.id].classList.add('active');
-            }
-          });
-        }, {threshold: 0.4}).apply = function(){};
-        var obs = new IntersectionObserver(function(entries) {
-          entries.forEach(function(e) {
-            if (e.isIntersecting) {
-              Object.keys(navLinks).forEach(function(k) { navLinks[k].classList.remove('active'); });
-              if (navLinks[e.target.id]) navLinks[e.target.id].classList.add('active');
-            }
-          });
-        }, {threshold: 0.4});
-        ['home','about','plan','get-involved'].forEach(function(id) {
-          var el = document.getElementById(id);
-          if (el) obs.observe(el);
-        });
-      }
+<footer class="wrap">
+  <span>&copy; 2026 Milan van Dam</span>
+  <span>Democratic Organizer</span>
+</footer>
 
-      // PLAN ACCORDION — headers are now <button> elements
-      document.querySelectorAll('.plan-header').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var panel = btn.closest('.plan-panel');
-          var wasOpen = panel.classList.contains('open');
-          document.querySelectorAll('.plan-panel').forEach(function(p) { p.classList.remove('open'); });
-          document.querySelectorAll('.plan-nav-item').forEach(function(n) { n.classList.remove('active'); });
-          if (!wasOpen) {
-            panel.classList.add('open');
-            var nav = document.querySelector('.plan-nav-item[data-target="' + panel.id + '"]');
-            if (nav) nav.classList.add('active');
-          }
-        });
-      });
+<script>
+  const expToggle = document.getElementById("expToggle");
+  const expExtra = document.getElementById("expExtra");
+  let expanded = false;
+  expToggle.addEventListener("click", () => {
+    expanded = !expanded;
+    expExtra.style.display = expanded ? "block" : "none";
+    expToggle.textContent = expanded ? "Show fewer roles" : "Show more roles";
+  });
+</script>
 
-      // PLAN SIDE NAV
-      document.querySelectorAll('.plan-nav-item').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var id = btn.getAttribute('data-target');
-          document.querySelectorAll('.plan-panel').forEach(function(p) { p.classList.remove('open'); });
-          document.querySelectorAll('.plan-nav-item').forEach(function(n) { n.classList.remove('active'); });
-          var panel = document.getElementById(id);
-          if (panel) panel.classList.add('open');
-          btn.classList.add('active');
-        });
-      });
-
-      // FAB CLOSE
-      var fabClose = document.getElementById('fabClose');
-      var fab = document.getElementById('fab');
-      if (fabClose && fab) {
-        fabClose.addEventListener('click', function() { fab.style.display = 'none'; });
-      }
-
-    });
-  </script>
 </body>
 </html>
